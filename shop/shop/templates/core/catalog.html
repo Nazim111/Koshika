@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+<div class="container-fluid-m">
+  <div class="row">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="block-lg">
+    <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="t-4-1">
+        Новая коллекция
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="album py-5">
+         <div class="container">
+          {% for product_group in products %}
+               <div class="row">
+                {% for product in product_group %}
+                  {% if product_group|length == 3 %}
+                   <div class="col-md-4">
+                       <div class="card shadow-sm" style="border: none;">
+                           <img class="img-product" style="max-height: 350px;" src="{{ product.image_1.url }}">
+                           <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+                               <div class="row">
+                                   <div class="col-9 title" style="padding-right: 0px!important;">
+                                    <a href="{{ product.get_absolute_url }}"
+                                       style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                                    </div>
+                                   <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                                       <div class="card-text-p">{{ product.price }} руб.</div>
+                                   </div>
+                                </div>
+                              </div>
+                       </div>
+                   </div>
+                  {% endif %}
+                  {% if product_group|length == 2 %}
+                   <div class="col-md-6">
+                            <div class="card shadow-sm" style="border: none;">
+                              <img class="img-product" src="{{ product.image_1.url }}">
+                              <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+                                <div class="row">
+                                  <div class="col-9 title" style="padding-right: 0px!important;">
+                                    <a href="{{ product.get_absolute_url }}"
+                                       style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                                  </div>
+                                  <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                                    <div class="card-text-p">{{ product.price }} руб.</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                  {% endif %}
+                {% endfor %}
+               </div>
+          {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+<div class="block-xs">
+    <div class="container-fluid-m">
+      <div class="row">
+      </div>
+    </div>
+    <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="t-4-1">
+        Новая коллекция
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 align-self-center">
+                <div class="category-filter">
+                    {% csrf_token %}
+                    <select class="select" onchange="window.location.href=this.options[this.selectedIndex].value" >
+                        <option style="width: 20px;" selected="Категории" disabled>Категории</option>
+                        {% for category in category_list %}
+                        <option value="{% url 'core:category_detail' category.slug %}">{{ category.title }}</option>
+                        {%endfor%}
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="album py-5">
+         <div class="container">
+          {% for product_group in products %}
+               <div class="row">
+                {% for product in product_group %}
+                  {% if product_group|length == 3 %}
+                   <div class="col-md-4">
+                       <div class="card shadow-sm" style="border: none;">
+                           <img class="img-product" src="{{ product.image_small.url }}">
+                           <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+                               <div class="row">
+                                   <div class="col-9 title" style="padding-right: 0px!important;">
+                                    <a href="{{ product.get_absolute_url }}"
+                                       style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                                    </div>
+                                   <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                                       <div class="card-text-p">{{ product.price }} руб.</div>
+                                   </div>
+                                </div>
+                              </div>
+                       </div>
+                   </div>
+                  {% endif %}
+                  {% if product_group|length == 2 %}
+                   <div class="col-md-6">
+                            <div class="card shadow-sm" style="border: none;">
+                              <img class="img-product" src="{{ product.image_main.url }}">
+                              <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+                                <div class="row">
+                                  <div class="col-9 title" style="padding-right: 0px!important;">
+                                    <a href="{{ product.get_absolute_url }}"
+                                       style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                                  </div>
+                                  <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                                    <div class="card-text-p">{{ product.price }} руб.</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                  {% endif %}
+                {% endfor %}
+               </div>
+          {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock main %}

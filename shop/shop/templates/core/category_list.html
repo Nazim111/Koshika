@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+  <div class="container-fluid-m">
+    <div class="row">
+    </div>
+  </div>
+
+  <div class="block-lg">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          {% for category in category_list %}
+          <div class="category-filter">
+            <a href="{% url 'core:category_detail' category.slug %}" style="color: #2E2F40; text-decoration: none">{{ category.title }}</a>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid-m">
+    <div class="row">
+    </div>
+  </div>
+
+
+{% endblock main %}

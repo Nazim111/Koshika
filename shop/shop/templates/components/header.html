@@ -1,0 +1,94 @@
+{% load static %}
+
+<div class="block-nav-lg">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top px-0" style="background-color: black; background-position: initial initial; background-repeat: initial initial; opacity: 0.8;">
+      <div class="container-fluid px-0">
+        <a class="navbar-brand" href="{% url 'core:index' %}">KOSHIKA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse px-0" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active-1" aria-current="page" href="{% url 'core:catalog'%}">Каталог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active-2" aria-current="page" href="{% url 'core:index' %}#a1">О нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active-3" aria-current="page" href="{% url 'core:about' %}">Коллекция</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active-3" aria-current="page" href="">Доставка</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link active-4" aria-current="page" href="{% url 'users:profile' %}">Аккаунт</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active-5" aria-current="page" href="{% url 'users:logout' %}">Выйти</a>
+            </li>
+            <li class="nav-item">
+              {% else %}
+                <a class="nav-link active-6" aria-current="page" href="{% url 'users:login' %}">Аккаунт</a>
+              {% endif %}
+            <li class="nav-item">
+              <a class="nav-link active-7" aria-current="page" href="{% url 'order:cart' %}">Корзина</a>
+            </li>
+            <li class="nav-item">
+              <div class="cart-circle">{{ request.session.cart|length }}</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="block-nav-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-0" style="background-color: black; background-position: initial initial; background-repeat: initial initial; opacity: 1;">
+      <div class="container-fluid px-0">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'core:index' %}">KOSHIKA</a>
+        <div class="icon-trash">
+          <a href="{% url 'order:cart' %}"><img class="icon-trash" src="{% static 'img/icon-trash.png' %}"></a>
+        </div>
+        <div class="cart-circle">{{ request.session.cart|length }}</div>
+
+        <div class="collapse navbar-collapse px-0" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active-1" aria-current="page" href="{% url 'core:catalog' %}">Каталог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active-2" aria-current="page" href="{% url 'core:index' %}#a1">О нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active-3" aria-current="page" href="{% url 'core:about' %}">Коллекция</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active-7" aria-current="page" href="#">Доставка</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link active-4" aria-current="page" href="{% url 'users:profile' %}">Аккаунт</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active-5" aria-current="page" href="{% url 'users:logout' %}">Выйти</a>
+            </li>
+            <li class="nav-item">
+              {% else %}
+                <a class="nav-link active-6" aria-current="page" href="{% url 'users:login' %}">Аккаунт</a>
+              {% endif %}
+
+            <li class="nav-item">
+              <a class="button-1-sm" href="#l-2">
+                <div class="t-1-2">Приступить к покупкам</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>

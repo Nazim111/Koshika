@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+<div class="container-fluid-m">
+        <div class="row">
+        </div>
+    </div>
+<div class="container-fluid-m1">
+    <div class="row">
+    </div>
+</div>
+<div class="container-fluid-m1">
+    <div class="row">
+    </div>
+</div>
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-12 align-self-center text-center">
+            <h1 style="color: black; font-family: 'Cormorant Garamond'; color: #2E2F40;">
+                Приветствую, {{ user.name }} !
+             </h1>
+        </div>
+<!--        {% for order in user.order_set.all %}-->
+<!--            {{ order.id }}-->
+<!--            {{ order.created_at }}-->
+<!--        {% endfor %}-->
+    </div>
+</div>
+
+<div class="container-fluid-m">
+        <div class="row">
+        </div>
+    </div>
+<div class="container-fluid-m1">
+    <div class="row">
+    </div>
+</div>
+{% endblock main %}
+
+

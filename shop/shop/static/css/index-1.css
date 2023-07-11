@@ -1,0 +1,874 @@
+
+    .navbar-nav.me-auto.mb-2.mb-md-0 {
+      padding-right: 110px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 140%;
+      color: #232A36;
+    }
+    .navbar-brand {
+      padding-left: 200px;
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: #E5E5E5;
+    }
+    /* .navbar-expand-md .navbar-nav .nav-link {
+      padding-left: 335px !important;
+    } */
+    .nav-link.log {
+        margin-right: 10px;
+    }
+    .cart-circle {
+      color: white;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      background: #934754;
+      margin-top: 6px;
+      border-radius: 50%;
+      text-align: center;
+    }
+    .nav-link.active-1 {
+      padding-left: 350px !important;
+    }
+    .nav-link.active-2 {
+      padding-left: 40px !important;
+    }
+    .nav-link.active-3 {
+      padding-left: 40px !important;
+    }
+    .nav-link.active-4 {
+      padding-left: 180px !important;
+    }
+    .nav-link.active-5 {
+      padding-left: 10px !important;
+    }
+    .nav-link.active-6 {
+      padding-left: 210px !important;
+    }
+    .nav-link.active-7 {
+      padding-left: 10px !important;
+    }
+
+    .row.px-0.b-1 {
+      height: 1046px!important;
+    }
+    .col-2.px-0 {
+      margin-left: -80px;
+    }
+    .col-3.px-0.c-3 {
+      margin-left: -80px;
+    }
+    .col-6.px-0.c-1 {
+      margin-left: -80px;
+    }
+    .col-6.px-0.c-2 {
+      margin-left: -80px;
+    }
+
+
+    .t-1 {
+      padding-top: 250px;
+      padding-left: 200px;
+
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 100px;
+      line-height: 121px;
+
+      color: #E5E5E5;
+      text-transform: uppercase;
+
+    }
+    .t-1-1 {
+      padding-left: 200px;
+      padding-top: 5px;
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      text-transform: uppercase;
+      color: #E5E5E5;
+    }
+    .t-1-2 {
+      padding: 20px;
+      padding-left: 48px;
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #000000;
+    }
+    .button-1 {
+      background-color: white;
+      border: 1px solid grey;
+      text-decoration: none;
+      position: absolute;
+      width: 327px;
+      height: 60px;
+      left: 200px;
+      top: 465px;
+    }
+    .t-1-3 {
+      position: absolute;
+      padding: 20px;
+      padding-left: 48px;
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #000000;
+    }
+    .button-2 {
+      align-self: center;
+      background-color: white;
+      border: 1px solid grey;
+
+      position: absolute;
+      width: 327px;
+      height: 60px;
+      margin-left: 50px;
+    }
+
+    .t-2 {
+      padding-top: 156px;
+      padding-right: 100px;
+
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 50px;
+      line-height: 46px;
+      text-transform: uppercase;
+      color: #E5E5E5;
+    }
+    .t-2-1 {
+      padding-top: 5px;
+      padding-right: 365px;
+      font-family: 'Cormorant Garamond';
+      font-style: italic;
+      font-weight: 500;
+      font-size: 50px;
+      line-height: 92.1%;
+      text-transform: uppercase;
+      color: #E5E5E5;
+    }
+
+    .t-3 {
+      padding-left: 188px;
+      padding-right: 200px;
+
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+      color: #E5E5E5;
+    }
+    .t-3-1 {
+      padding-right: 1px;
+
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+      color: #E5E5E5;
+    }
+    .t-3-2 {
+      padding-left: 120px;
+      padding-right: 150px;
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+      color: #E5E5E5;
+    }
+
+    .t-4-1 {
+      text-align: center;
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 70px;
+      line-height: 85px;
+      color: #2E2F40;
+    }
+    .t-4-2 {
+      margin-top: 20px;
+      text-align: center;
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 15px;
+      color: #934754;
+    }
+
+    .t-5-1 {
+      text-align: center;
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #2E2F40;
+    }
+    .container.product {
+        height: 500px!important;
+    }
+    .img-product {
+
+    }
+    .col-8.title {
+        width: 200px;
+        margin-right: 0px!important;
+    }
+    .col-4.price {
+        width: 100px;
+    }
+    .card-text-p {
+        margin-left: 10px;
+        margin-right: 20px!important;
+
+        width: 80px;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #515151;
+    }
+    .text-nav-menu {
+        margin-left: 210px;
+    }
+
+    .a.text:active,
+    .a.text:hover,
+    .a.text,
+    .a {
+      color: #2E2F40!important;
+      text-decoration: none!important;
+    }
+
+    .t-5-2 {
+      margin-top:16px;
+      margin-bottom: 16px;
+      text-align: center;
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 70px;
+      line-height: 85px;
+      text-transform: uppercase;
+      color: #2E2F40;
+      overflow: hidden;
+    }
+    .t-5-2  span {
+        text-decoration:none;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 85px;
+        color: #958F8F;
+    }
+    .t-5-2 :before,
+    .t-5-2 :after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 40px;
+        height: 1px;
+        background-color: #958F8F;
+        position: relative;
+        text-decoration:none;
+    }
+    .t-5-2 :before {
+        text-decoration:none;
+        margin-left: -100%;
+        left: -14px;
+    }
+    .t-5-2 :after {
+        text-decoration:none;
+        margin-right: -100%;
+        right: -14px;
+    }
+
+
+    .t-6-1 {
+      position: absolute;
+      width: 500px;
+      height: 96px;
+      left: 556px;
+
+      margin-top: 368px!important;
+      /* margin-top: auto;
+      padding-right: 0px; */
+      /* margin-bottom: 50px; */
+
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 32px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #E5E5E5;
+    }
+    .t-6-2 {
+      position: absolute;
+      width: 55px;
+      height: 89px;
+      left: 656px;
+      margin-top: 495px;
+
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 100px;
+      line-height: 105.1%;
+      text-align: center;
+      text-transform: uppercase;
+      color: #E5E5E5;
+    }
+    .t-6-3 {
+      position: absolute;
+      width: 320px;
+      height: 314px;
+      left: 696px;
+      margin-top: 565px;
+
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #E5E5E5;
+    }
+
+    .t-7-1 {
+      /* position: absolute;
+      width: 192px;
+      height: 72px;
+      left: 527px;
+      top: 5722px; */
+      margin-top: 280px;
+      margin-left: 60px;
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: uppercase;
+
+      color: #934754;
+    }
+
+    .t-8-1 {
+      padding-left: 200px;
+      padding-bottom: 30px;
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: #262E21;
+    }
+    .t-8-2 {
+      padding-left: 50px;
+      padding-bottom: 30px;
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: #262E21;
+    }
+    .t-8-3 {
+      padding-left: 50px;
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 50px;
+      line-height: 100%;
+      text-align: left;
+      text-transform: uppercase;
+      color: #3B3C64;
+    }
+    .t-8-4 {
+      padding-left: 200px;
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 35px;
+      color: #999494!important;
+    }
+
+    .t-8-5 {
+      padding-left: 50px;
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 35px;
+      color: #999494;
+    }
+    .t-8-6 {
+      padding-left: 200px;
+      margin-bottom: 60px;
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #515151;
+    }
+    .t-8-7 {
+      padding-left: 50px;
+      margin-bottom: 60px;
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #515151;
+    }
+
+    .img-0 {
+      width: 880px;
+    }
+    .img-1 {
+      margin-top: 0px;
+      margin-left: 0px;
+      width: 280px;
+      height: 276px;
+    }
+    .img-2 {
+      margin-top: 0px;
+      width: 401px;
+      height: 551px;
+    }
+    .img-3 {
+      margin-left: 190px;
+      margin-top: 0px!important;
+      margin-top: auto;
+      padding-right: 0px;
+      margin-bottom: 50px;
+      width: 920px;
+      height: 725px;
+    }
+    .img-5 {
+      margin-left: 196px;
+      margin-top: 100px;
+      padding-right: 0px;
+      margin-bottom: 0px;
+      width: 596px;
+      height: 616px;
+    }
+    .img-6 {
+      margin-top: 100px;
+
+      margin-bottom: 0px;
+      margin-left: -52px;
+      width: 652px;
+      height: 616px;
+    }
+    .img-7 {
+      width: 307px;
+      height: 282px;
+      margin-left: 60px;
+    }
+    .img-8 {
+      width: 307px;
+      height: 282px;
+      margin-left: 60px;
+      margin-right: 0px;
+    }
+    .img-9 {
+      width: 306px;
+      height: 282px;
+      left: 814px;
+    }
+    .img-10 {
+      width: 307px;
+      height: 282px;
+      /* margin-right: 100px; */
+      margin-left: -38px;
+
+    }
+    .img-11 {
+      width: 307px;
+      height: 282px;
+      /* margin-right: 100px; */
+      margin-left: -38px;
+    }
+
+
+
+
+
+
+
+
+    .img-b1 {
+      position: absolute;
+      top: 3580px;
+      margin-left: 188px;
+      width: 307px;
+      height: 415px;
+    }
+    .img-b2 {
+      position: absolute;
+      top: 3680px;
+      margin-left: 0px;
+      width: 280px;
+      height: 280px;
+    }
+    .img-s1 {
+      position: absolute;
+      top: 3580px;
+      margin-left: 188px;
+      width: 307px;
+      height: 385px;
+    }
+    .img-s2 {
+      position: absolute;
+      top: 3580px;
+      margin-left: 0px;
+      width: 280px;
+      height: 235px;
+    }
+    .img-k1 {
+      position: absolute;
+      top: 3580px;
+      margin-left: 188px;
+      width: 308px;
+      height: 385px;
+    }
+    .img-k2 {
+      position: absolute;
+      top: 3700px;
+      margin-left: 40px;
+      width: 280px;
+      height: 270px;
+    }
+
+
+    .blocks {
+        display: flex;
+    }
+
+    .block-1 {
+
+    }
+    .block-1 .block__hidden {
+        opacity: 0;
+    }
+
+
+    .block-1:hover .block__hidden {
+        opacity: 1;
+        transition: 1s;
+    }
+    .img-b1, .img-b-2 {
+        display: block;
+    }
+
+
+
+
+    .block-2 {
+
+    }
+    .block-2 .block__hidden {
+        opacity: 0;
+    }
+    .block-2:hover .block__hidden {
+        opacity: 1;
+        transition: 1s;
+    }
+    .img-s1, .img-s2 {
+        display: block;
+    }
+
+
+
+    .block-3 {
+
+    }
+    .block-3 .block__hidden {
+        opacity: 0;
+    }
+    .block-3:hover .block__hidden {
+        opacity: 1;
+        transition: 1s;
+    }
+    .img-k1, .img-k2 {
+        display: block;
+    }
+
+
+    .container-fluid-m {
+      height: 100px;
+    }
+
+
+
+    .acc-form {
+        margin-left: 48px;
+    }
+    .form-login {
+        width: 450px;
+    }
+    .w-100.btn.btn-lg.btn-primary {
+        height: 57px;
+        border-radius: 40px;
+        background-color: #934754;
+        border-color: #934754;
+        margin-left: 0px;
+    }
+    .acc-t-1 {
+        font-family: 'Cormorant Garamond';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 50px;
+        line-height: 61px;
+        text-align: left;
+        color: #2E2F40;
+    }
+    .acc-t-2 {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        font-family: 'Cormorant Garamond';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    .btn-t {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+
+    .reg-link-t {
+        margin-bottom: 14px;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;;
+        text-transform: uppercase;
+        color: #2E2F40;
+        margin-bottom: 30px;
+    }
+
+    .call-t-1 {
+        margin-bottom: 40px;
+        font-family: 'Cormorant Garamond';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 50px;
+        line-height: 61px;
+        text-align: center;
+        color: #2E2F40;
+    }
+
+    .prof-t-1 {
+        font-family: 'Cormorant Garamond';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 50px;
+        line-height: 61px;
+        text-align: center;
+        color: #2E2F40;
+    }
+
+    .title-product {
+        font-family: 'Cormorant Garamond';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 36px;
+        text-align: left;
+        color: #000000;
+    }
+
+    .price-t {
+        margin-top: 10px;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: right;
+        color: #5B5B5B;
+    }
+
+    .quantity-t {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 100%;
+        text-align: center;
+        text-transform: capitalize;
+        color: #000000;
+    }
+
+    .price-all {
+        margin-top: 20px;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 100%;
+        text-align: left;
+        text-transform: uppercase;
+        color: #000000;
+    }
+
+    .w-90.btn.btn-lg.btn-primary {
+        margin-left: 0px;
+        height: 57px;
+        width: 390px;
+        border-radius: 40px;
+        background-color: #934754;
+        border-color: #934754;
+    }
+
+
+    .category-filter {
+        text-align: center;
+        font-family: 'Cormorant Garamond';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 50px;
+        line-height: 85px;
+        color: #2E2F40;
+    }
+
+
+    .select {
+         border: none;
+         background: #fff;
+         color: #2E2F40;
+    }
+    .category-filter-name {
+        margin-left: -40px;
+    }
+    .category-filter-popular {
+      margin-left: 60px;
+    }
+    .category-filter-popular-1 {
+      margin-left: 260px;
+    }
+    .sort {
+        margin-left: 170px;
+    }
+    .t-link {
+        margin-left: 180px;
+        margin-top: 20px;
+    }
+
+    .product-desc {
+        position: absolute;
+        width: 436px;
+        height: 489px;
+        top: 180px;
+        left: 960px;
+        border-radius: 10px;
+    }
+
+    .btn.btn {
+        background: #934754;
+        border-radius: 65px;
+        width: 333px;
+        height: 57px;
+        margin-top: 40px;
+        margin-left: 10px;
+    }
+    .t-btn {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+    .card-text-title {
+        font-family: 'Cormorant Garamond';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 36px;
+        text-align: center;
+        color: #2E2F40;
+    }
+
+    .card-text-price {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #515151;
+    }
+
+    .card-text-desc {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: #515151;
+    }
+
+    .img-product {
+        width: 280px;
+        height: 354px;
+        margin: 10px;
+    }
+
+    .img-product-catalog {
+        height: 380px;
+        width: 100%;
+    }
+    .img-product-catalog-1 {
+        height: 420px;
+        width: 100%;
+    }
+    .img-product-catalog-2 {
+        height: 720px;
+        width: 100%;
+    }
+
+
+
+

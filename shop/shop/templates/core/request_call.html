@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+  <div class="container-fluid-m">
+    <div class="row">
+    </div>
+  </div>
+
+<div class="block-lg">
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="acc-form">
+            <div class="call-t-1">Заказать звонок</div>
+            <form class="call-request" method="post">
+                {% csrf_token %}
+                  <input style="margin-bottom: 20px;" name="name" type="text" class="form-control" placeholder="Имя" autofocus required>
+                  <input style="margin-bottom: 20px;" name="phone" type="text" class="form-control" placeholder="Номер телефона" required>
+                  <input style="margin-bottom: 20px;" name="message" type="text" class="form-control" placeholder="Сообщение" required>
+                  <button style="margin-top: 20px;" style="margin-top: 20px;" class="w-100 btn btn-lg btn-primary" type="submit"><div class="btn-t">Заказать звонок</div></button>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="block-xs">
+    <div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="acc-form">
+            <div class="call-t-1">Заказать звонок</div>
+            <form class="call-request" method="post">
+                {% csrf_token %}
+                  <input style="margin-bottom: 20px;" name="name" type="text" class="form-control" placeholder="Имя" autofocus required>
+                  <input style="margin-bottom: 20px;" name="phone" type="text" class="form-control" placeholder="Номер телефона" required>
+                  <input style="margin-bottom: 20px;" name="message" type="text" class="form-control" placeholder="Сообщение" required>
+                  <button style="margin-top: 20px;" style="margin-top: 20px;" class="w-100 btn btn-lg btn-primary" type="submit"><div class="btn-t">Заказать звонок</div></button>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+  <div class="container-fluid-m">
+    <div class="row">
+    </div>
+  </div>
+{% endblock main %}
+
+
+

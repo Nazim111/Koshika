@@ -1,0 +1,301 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+<!--    <link href="checkout.css" rel="stylesheet">-->
+
+
+    
+<div class="container">
+
+    <div class="py-5 text-center">
+      <h2>Checkout form</h2>
+      <p class="lead"></p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-right mb-4">
+          <span class="text-primary">Your cart</span>
+        </h4>
+
+        {% for item in cart %}
+          {% with product=item.product %}
+          <div class="row">
+            <div class="col-4">
+              <img class="img-fluid" src="{{ product.image_1.url }}">
+            </div>
+            <div class="col-8">
+              <div class="row">
+                <h6 class="my-0">{{ product.title }}</h6>
+              </div>
+              <div class="row" style="height: 40px;"></div>
+              <div class="row">
+                <span class="text-muted">{{ product.price }} Руб. </span>
+              </div>
+            </div>
+          </div>
+
+          {% endwith %}
+        {% empty %}
+        <div>CART EMPTY</div>
+        {% endfor %}
+        <div class="row" style="margin-top: 50px;">
+          <div class="col-6">
+            <span>Сумма:</span>
+          </div>
+          <div class="col-6">
+            <strong>{{ cart.get_total_price }} Руб.</strong>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Контактная информация</h4>
+
+
+        <div class="row g-3">
+          {% if user.is_authenticated %}
+            <h6>Hi, {{user}} !</h6>
+          <form class="form-group" action="" method="POST">
+            {% csrf_token %}
+            <h4 class="mb-3">Адрес доставки</h4>
+              <div class="col-sm-6">
+                <label for="address2" class="form-label">Address<span class="text-muted"></span></label>
+                <input name="address" type="text" class="form-control" placeholder="Apartment or suite">
+              </div>
+
+              <div class="col-sm-6">
+                <label for="address2" class="form-label">Comment<span class="text-muted"></span></label>
+                <input name="comment" type="text" class="form-control" placeholder="Apartment or suite">
+              </div>
+
+            <button class="w-100 btn btn-primary btn-md" type="submit">Continue to checkout</button>
+          </form>
+
+
+
+<!--              <div class="col-sm-6">-->
+<!--                <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>-->
+<!--                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">-->
+<!--              </div>-->
+
+<!--              <div class="col-md-3">-->
+<!--                <label for="zip" class="form-label">Zip</label>-->
+<!--                <input type="text" class="form-control" id="zip" placeholder="" required>-->
+<!--                <div class="invalid-feedback">-->
+<!--                  Zip code required.-->
+<!--                </div>-->
+<!--              </div>-->
+
+<!--              <div class="col-md-3">-->
+<!--                <label for="zip" class="form-label">Zip</label>-->
+<!--                <input type="text" class="form-control" id="zip" placeholder="" required>-->
+<!--                <div class="invalid-feedback">-->
+<!--                  Zip code required.-->
+<!--                </div>-->
+<!--              </div>-->
+
+          {% else %}
+          <h4>Введите необходимую информацию или <a href="" >Войдите</a></h4>
+          <form class="form-group" action="" method="POST">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label"></label>
+                <input name="name" type="text" class="form-control" placeholder="Имя" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label"></label>
+                <input name="surname" type="text" class="form-control" placeholder="Фамилия" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="PhoneNumber" class="form-label"></label>
+                <input name="phone" type="text" class="form-control" placeholder="Телефон" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="email" class="form-label"><span class="text-muted"></span></label>
+                <input type="email" class="form-control" placeholder="Email">
+                <div class="invalid-feedback">
+                  Please enter a valid email address for shipping updates.
+                </div>
+              </div>
+            </div>
+
+<!--            <h4 class="mb-3">Адрес доставки</h4>-->
+<!--              <div class="col-sm-6">-->
+<!--                <label for="address2" class="form-label"> <span class="text-muted">(Optional)</span></label>-->
+<!--                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">-->
+<!--              </div>-->
+
+<!--              <div class="col-sm-6">-->
+<!--                <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>-->
+<!--                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">-->
+<!--              </div>-->
+
+<!--              <div class="col-sm-6">-->
+<!--                <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>-->
+<!--                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">-->
+<!--              </div>-->
+
+<!--              <div class="col-md-3">-->
+<!--                <label for="zip" class="form-label">Zip</label>-->
+<!--                <input type="text" class="form-control" id="zip" placeholder="" required>-->
+<!--                <div class="invalid-feedback">-->
+<!--                  Zip code required.-->
+<!--                </div>-->
+<!--              </div>-->
+
+<!--              <div class="col-md-3">-->
+<!--                <label for="zip" class="form-label">Zip</label>-->
+<!--                <input type="text" class="form-control" id="zip" placeholder="" required>-->
+<!--                <div class="invalid-feedback">-->
+<!--                  Zip code required.-->
+<!--                </div>-->
+<!--              </div>-->
+            <button class="w-100 btn btn-primary btn-md" type="submit">Continue to checkout</button>
+          </form>
+        {% endif %}
+
+
+
+
+
+
+<!--          <hr class="my-4">-->
+
+<!--          <h4 class="mb-3">Payment</h4>-->
+
+<!--          <div class="my-3">-->
+<!--            <div class="form-check">-->
+<!--              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>-->
+<!--              <label class="form-check-label" for="credit">Credit card</label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>-->
+<!--              <label class="form-check-label" for="debit">Debit card</label>-->
+<!--            </div>-->
+<!--            <div class="form-check">-->
+<!--              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>-->
+<!--              <label class="form-check-label" for="paypal">PayPal</label>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="row gy-3">-->
+<!--            <div class="col-md-6">-->
+<!--              <label for="cc-name" class="form-label">Name on card</label>-->
+<!--              <input type="text" class="form-control" id="cc-name" placeholder="" required>-->
+<!--              <small class="text-muted">Full name as displayed on card</small>-->
+<!--              <div class="invalid-feedback">-->
+<!--                Name on card is required-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            <div class="col-md-6">-->
+<!--              <label for="cc-number" class="form-label">Credit card number</label>-->
+<!--              <input type="text" class="form-control" id="cc-number" placeholder="" required>-->
+<!--              <div class="invalid-feedback">-->
+<!--                Credit card number is required-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            <div class="col-md-3">-->
+<!--              <label for="cc-expiration" class="form-label">Expiration</label>-->
+<!--              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>-->
+<!--              <div class="invalid-feedback">-->
+<!--                Expiration date required-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            <div class="col-md-3">-->
+<!--              <label for="cc-cvv" class="form-label">CVV</label>-->
+<!--              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>-->
+<!--              <div class="invalid-feedback">-->
+<!--                Security code required-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <hr class="my-4">-->
+
+
+      </div>
+    </div>
+
+</div>
+
+
+      <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+
+{% endblock main %}

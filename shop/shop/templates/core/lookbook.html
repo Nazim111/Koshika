@@ -1,0 +1,721 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:wght@300;400;500;700;800&family=Lora:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="{% static 'css/lookbook-1.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/lookbook-2.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/slider.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script defer src="{% static 'js/chief-slider.js' %}"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          new ChiefSlider('.slider', {
+            loop: true,
+            autoplay: false,
+            interval: 5000,
+          });
+        });
+    </script>
+  </head>
+
+<body style="background: #BBC2CD;">
+    <div class="block-nav-lg">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top px-0" style="background-color: #BBC2CD; background-position: initial initial; background-repeat: initial initial; opacity: 0.9;">
+          <div class="container-fluid px-0">
+            <a class="navbar-brand" href="{% url 'core:index' %}">KOSHIKA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse px-0" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link active-1" aria-current="page" href="{% url 'core:catalog' %}">Каталог</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active-2" aria-current="page" href="{% url 'core:index' %}#a1">О нас</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active-3" aria-current="page" href="#">Доставка</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active-4" aria-current="page" href="{% url 'users:profile' %}">Аккаунт</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active-5" aria-current="page" href="{% url 'users:logout' %}">Выйти</a>
+                </li>
+                <li class="nav-item">
+                  {% else %}
+                    <a class="nav-link active-6" aria-current="page" href="{% url 'users:login' %}">Аккаунт</a>
+                  {% endif %}
+                <li class="nav-item">
+                  <a class="nav-link active-7" aria-current="page" href="{% url 'order:cart' %}">Корзина</a>
+                </li>
+                <li class="nav-item">
+                  <div class="cart-circle">{{ request.session.cart|length }}</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </div>
+    <div class="block-nav-sm">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top px-0" style="background-color: #BBC2CD; background-position: initial initial; background-repeat: initial initial; opacity: 1;">
+          <div class="container-fluid px-0">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'core:index' %}">KOSHIKA</a>
+            <div class="icon-trash">
+              <a href="{% url 'order:cart' %}"><img class="icon-trash" src="{% static 'img/icon-trash-dark.png' %}"></a>
+            </div>
+
+            <div class="collapse navbar-collapse px-0" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link active-1" aria-current="page" href="{% url 'core:catalog' %}">Каталог</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active-2" aria-current="page" href="#">О нас</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active-3" aria-current="page" href="#">Доставка</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active-4" aria-current="page" href="{% url 'users:profile' %}">Аккаунт</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active-5" aria-current="page" href="{% url 'users:logout' %}">Выйти</a>
+                </li>
+                <li class="nav-item">
+                  {% else %}
+                    <a class="nav-link active-6" aria-current="page" href="{% url 'users:login' %}">Аккаунт</a>
+                  {% endif %}
+                <li class="nav-item">
+                  <div class="cart-circle">{{ request.session.cart|length }}</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </div>
+
+
+<div class="box"></div>
+<div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="t-1">
+                    КОЛЛЕКЦИЯ
+                </div>
+                <img class="img-1" src="{% static 'img/lb-1.png' %}">
+                <!-- <div class="t-2v">
+                    Серьги «Хлопковый жемчуг»<br>
+                    2100 руб.
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+
+<div class="box-lg"></div>
+<div class="box"></div>
+
+<div class="container">
+        <div class="row">
+            <div class="t-2">
+                    осень – зима<br>
+                <div class="t-2 yr">
+                    2022
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="container">
+    <div class="row" style="margin-top: 50px;">
+            <div class="col-4 b-1">
+                <div class="t-2 b2">
+                    Сделайте свой выбор
+                </div>
+                {% for category in category_list %}
+                <div class="t-2 b3">
+                    <a href="{% url 'core:category_detail' category.slug %}" style="
+                    color: #E11204;
+                    text-decoration: none;
+                    font-family: 'Raleway';
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 19px;
+                    text-transform: uppercase;
+                    z-index: 10;">
+                    {{ category.title }} ↗ </a>
+                </div>
+                {%endfor%}
+                <div class="t-2 b3 b4">
+                    к покупкам
+                </div>
+            </div>
+            <div class="col-8">
+                <img class="img-2" src="{% static 'img/lb-2.png' %}">
+            </div>
+    </div>
+</div>
+
+
+<div class="box-lg"></div>
+
+<div class="box"></div>
+<div class="container">
+    <div class="row">
+        <div class="t-2 b5">
+            История <br>
+            женских <br>
+            украшений
+        </div>
+        <div class="t-5">
+            ведёт своё начало с глубокой древности. Модницы каменного века тоже стремились к красоте, используя при этом природные материалы: дерево, минералы, плетение. Однако украшения древних людей несли не только эстетическую функцию, они являлись оберегами, талисманами, в силу которых они верили
+        </div>
+        <div class="t-6">
+            @koshika_brand
+        </div>
+        <div class="row">
+            <div class="col-4 xs">
+                <div class="t-7">
+                    узнать о бренде
+                </div>
+            </div>
+            <div class="col-4 xs">
+                <div class="t-7-l">
+                    узнать о бренде
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="t-7 b1">
+                    перейти в каталог
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+        </div>
+        <div class="col-8">
+            <img class="img-3" src="{% static 'img/lb-3.png' %}">
+        </div>
+    </div>
+</div>
+
+<div class="box-lg"></div>
+<div class="box"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="t-2 b5 b6">
+            украшений должно быть много
+        </div>
+        <div class="t-5 b1">
+            Потому что они должны быть созвучны с вашим настроением, состоянием души. Недорогие украшения  имеют великолепную возможность сочетать в себе роскошь и доступность, изящество и повседневность, создавая свой неповторимый собственный стиль.
+        </div>
+
+        <div class="col-4 b-1">
+            <img class="img-4" src="{% static 'img/lb-4.png' %}">
+            <div class="t-2 b5 b7">
+                чтобы <br>вы могли ощущать себя <br>собой
+            </div>
+        </div>
+
+        <div class="col-8">
+            <img class="img-5" src="{% static 'img/lb-5.png' %}">
+        </div>
+    </div>
+</div>
+<div class="box"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="t-2 b5 b6 b7">
+            качественная и модная бижутерия
+        </div>
+        <div class="t-5 b2">
+            необходима для того чтобы подчеркнуть элегантность вашего образа.Если это свидание, пусть украшение будет не яркое, но запоминающееся. если деловая встреча, тут количество украшений не должно превышать трёх, включая обручальное кольцо.  А если выбирать изделие к вечернему наряду, то украшение вполне может быть и крупным и броским.
+        </div>
+        <div class="t-7 b2">
+            о бренде
+        </div>
+
+        <div class="col-4 xs-sm">
+        </div>
+
+        <div class="col-8 xs-xs">
+            <div class="row">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-4">
+            {% for product in category_lb_1 %}
+              <div class="col">
+                <div class="card shadow-sm" style="border: none;">
+                  <img class="img-product" style="height: 440px;" src="{{ product.image_1.url }}">
+                  <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px; background-color: #BBC2CD">
+                    <div class="row">
+                      <div class="col-8 title" style="padding-right: 0px!important;">
+                        <a href="{{ product.get_absolute_url }}"
+                           style="text-decoration: none;
+                                    margin-top: 10px;
+                                    padding-left: 10px;
+                                    font-family: 'Raleway';
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    text-align: left;
+                                    color: #E11204;">{{ product.title }}</a>
+                      </div>
+                      <div class="col-4 price" style="margin-right: 0px!important; padding-left: 0px!important;">
+                        <div style="margin-top: 0px;
+                                    font-family: 'Raleway';
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    text-align: right;
+                                    padding-right: 10px;
+                                    color: #E11204;">{{ product.price }} руб.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+            </div>
+        </div>
+
+        <div class="col-12 xs">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box"></div>
+
+
+
+
+<div class="block-xs">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3" style="">
+            {% for product in category_lb_1 %}
+              <div class="col">
+                <div class="card shadow-sm" style="border: none;">
+                  <img class="img-product" style="height: 350px;" src="{{ product.image_1.url }}">
+                  <div class="card-body" style="border: none; padding: 0px; background-color: #BBC2CD">
+                    <div class="row">
+                      <div class="col-8 title" style="padding-right: 0px!important; padding-left: 20px; margin-top: 10px;">
+                        <a href="{{ product.get_absolute_url }}"
+                           style="text-decoration: none;
+                                    margin-top: 20px;
+                                    padding-left: 0px;
+                                    font-family: 'Raleway';
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    text-align: left;
+                                    color: #E11204;">{{ product.title }}</a>
+                      </div>
+
+                      <div class="col-4 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                        <div style="margin-top: 10px;
+                                    font-family: 'Raleway';
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    text-align: right;
+                                    padding-right: 10px;
+                                    color: #E11204;">{{ product.price }} руб.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+    </div>
+  </div>
+<div class="block-lg">
+  <div class="container">
+    <div class="t-2 b5 b7 b1">
+        чтобы вы были неотразимы
+    </div>
+      <div class="album py-5" style="">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 g-4">
+          {% for product in category_lb %}
+          <div class="col">
+            <div class="card shadow-sm" style="border: none;">
+              <img class="img-product" style="height: 440px;" src="{{ product.image_1.url }}">
+              <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px;background-color: #BBC2CD">
+                <div class="row">
+                  <div class="col-8 title" style="padding-right: 0px!important;">
+                    <a href="{{ product.get_absolute_url }}"
+                       style="text-decoration: none;
+                                margin-top: 10px;
+                                padding-left: 10px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: left;
+                                color: #E11204;">{{ product.title }}</a>
+                  </div>
+                  <div class="col-4 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                    <div style="margin-top: 0px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: right;
+                                padding-right: 10px;
+                                color: #E11204;">{{ product.price }} руб.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+     </div>
+  </div>
+</div>
+
+<div class="block-sm">
+            <div class="row" style="margin: 10px; margin-bottom: 50px;">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-4" style="">
+            {% for product in category_lb_1 %}
+              <div class="col">
+                <div class="card shadow-sm" style="border: none;">
+                  <img class="img-product" style="height: 350px;" src="{{ product.image_1.url }}">
+                  <div class="card-body" style="border: none; padding: 0px; background-color: #BBC2CD">
+                    <div class="row">
+                      <div class="col-7 title" style="padding-right: 0px!important;">
+                        <a href="{{ product.get_absolute_url }}"
+                           style="text-decoration: none;
+                                    margin-top: 10px;
+                                    padding-left: 0px;
+                                    font-family: 'Raleway';
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    color: #E11204;">{{ product.title }}</a>
+                      </div>
+
+                      <div class="col-5 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                        <div style="margin-top: 10px;
+                                    font-family: 'Raleway';
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    text-align: right;
+                                    padding-right: 10px;
+                                    color: #E11204;">{{ product.price }} руб.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+            </div>
+
+</div>
+<div class="block-sm">
+  <div class="container-fluid" style="margin-bottom: 50px;">
+    <div class="t-2 b5 b7 b1">
+        чтобы вы были неотразимы
+    </div>
+
+        <div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 g-4">
+          {% for product in category_lb %}
+          <div class="col">
+            <div class="card shadow-sm" style="border: none;">
+              <img class="img-product" style="width: 194px; height: 252px;" src="{{ product.image_1.url }}">
+              <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px; background-color: #BBC2CD">
+                <div class="row">
+                  <div class="col-12 title" style="padding-right: 0px!important;">
+                    <a href="{{ product.get_absolute_url }}"
+                       style="text-decoration: none;
+                                margin-top: 10px;
+                                margin-left: 10px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 15px;
+                                text-align: left;
+                                color: #E11204;">{{ product.title }}</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                    <div style="margin-top: 0px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: left;
+                                margin-left: 20px;
+                                color: #E11204;">{{ product.price }} руб.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+     </div>
+
+<div class="block-xs">
+  <div class="container-fluid">
+    <div class="t-2 b5 b7 b1">
+      чтобы вы были неотразимы
+    </div>
+
+
+    <div class="row-slider">
+      <div class="col">
+        <div class="slider" data-slider="chiefslider" style="">
+          <div class="slider__container">
+            <div class="slider__wrapper">
+              <div class="slider__items">
+                {% for product in category_lb_2 %}
+                <div class="slider__item">
+                  <div class="slider__item-container">
+                    <div class="slider__item-content">
+                      <img class="img-fluid-c" src="{{ product.image_1.url }}">
+                        <a href="{{ product.get_absolute_url }}"
+                           style="text-decoration: none;
+                                margin-top: 10px;
+                                padding-left: 0px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: left;
+                                color: #E11204;">{{ product.title }}</a>
+                        <div style="margin-top: 10px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: left;
+                                padding-right: 10px;
+                                color: #E11204;">{{ product.price }} руб.</div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <a href="#" class="slider__control" data-slide="prev"></a>
+          <a href="#" class="slider__control" data-slide="next"></a>
+          <ol class="slider__indicators">
+            <li data-slide-to="1"></li>
+            <li data-slide-to="2"></li>
+            <li data-slide-to="3"></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="t-7 b3">
+            перейти в каталог
+        </div>
+    </div>
+    <div class="row">
+        <div class="t-6 b1">
+            ⟵вернуться на главную
+        </div>
+    </div>
+</div>
+<div class="box"></div>
+
+
+<div class="block-lg">
+    <div class="container-fluid" style="margin-top: 0px; margin-left: 0px; margin-right: 0px;">
+      <div class="row" style="padding-top: 50px;">
+        <div class="col-4">
+          <div class="t-8-1">
+            КОНТАКТЫ
+          </div>
+          <div class="t-8-4">
+            Заказать звонок <br>
+            inbox@koshika.ru <br>
+            +7(906)770-52-53 <br>
+            г. Москва, 1-я Пугачевская 25с1 оф.218
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="t-8-2">
+            Следите
+          </div>
+          <div class="t-8-5">
+            ВКОНТАКТЕ <br>
+            WILDBERRIES <br>
+            OZON
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="t-8-3">
+            koshika
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 50px;">
+        <div class="col-8">
+          <div class="t-8-6">
+            © 2022 Правовая оферта
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="t-8-7">
+            КАТАЛОГ
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="t-8-7">
+            ДОСТАВКА
+          </div>
+        </div>
+
+      </div>
+  </div>
+</div>
+<div class="block-sm">
+    <div class="container-fluid" style="margin-top: 0px; margin-left: 0px; margin-right: 0px;">
+      <div class="row" style="padding-top: 50px;">
+        <div class="col-4">
+          <div class="t-8-1">
+            КОНТАКТЫ
+          </div>
+          <div class="t-8-4">
+            Заказать звонок <br>
+            inbox@koshika.ru <br>
+            +7(906)770-52-53 <br>
+            г. Москва, 1-я Пугачевская 25с1 оф.218
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="t-8-2">
+            Следите
+          </div>
+          <div class="t-8-5">
+            ВКОНТАКТЕ <br>
+            WILDBERRIES <br>
+            OZON
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="t-8-3">
+            koshika
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 50px;">
+        <div class="col-8">
+          <div class="t-8-6">
+            © 2022 Правовая оферта
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="t-8-7">
+            КАТАЛОГ
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="t-8-7">
+            ДОСТАВКА
+          </div>
+        </div>
+
+      </div>
+  </div>
+</div>
+<div class="block-xs">
+    <div class="container-fluid" style="margin-top: 0px; margin-left: 0px; margin-right: 0px;">
+      <div class="row" style="padding-top: 50px;">
+          <div class="col-12">
+            <div class="t-8-3">
+              koshika
+            </div>
+            <div class="t-8-1">
+              КОНТАКТЫ
+            </div>
+            <div class="t-8-4">
+              Заказать звонок <br>
+              inbox@koshika.ru <br>
+              +7(906)770-52-53 <br>
+              г. Москва, 1-я Пугачевская 25с1 оф.218
+            </div>
+
+            <div class="t-8-2">
+              Следите
+            </div>
+            <div class="t-8-5">
+              ВКОНТАКТЕ <br>
+              WILDBERRIES <br>
+              OZON
+            </div>
+          </div>
+
+      </div>
+
+      <div class="row" style="margin-top: 50px;">
+        <div class="col-6">
+          <div class="t-8-6">
+            © 2022 Правовая оферта
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="t-8-7">
+            КАТАЛОГ
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="t-8-7">
+            ДОСТАВКА
+          </div>
+        </div>
+
+      </div>
+  </div>
+</div>
+</body>
+</html>

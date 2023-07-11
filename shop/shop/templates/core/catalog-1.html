@@ -1,0 +1,429 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<div class="container-fluid-m">
+  <div class="row">
+  </div>
+</div>
+    <div class="container-fluid-m1">
+      <div class="row">
+      </div>
+    </div>
+    <div class="container-fluid-m1">
+      <div class="row">
+      </div>
+    </div>
+
+<div class="block-lg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="t-4-1">
+            Новая коллекция
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid-m">
+      <div class="row">
+      </div>
+    </div>
+    <div class="sort">
+        <div class="container">
+    <div class="row">
+      <div class="col-4 align-self-left">
+         <div class="category-filter-name">
+             {% csrf_token %}
+             <select style="border: none;
+                        background: #fff;
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 13px;
+                        line-height: 15px;
+                        text-transform: uppercase;" onchange="window.location.href=this.options[this.selectedIndex].value">
+               <option   selected="Наименование" disabled>НАИМЕНОВАНИЕ</option>
+               {% for category in category_list %}
+                 <option style=""
+                         value="{% url 'core:category_detail' category.slug %}">{{ category.title }}</option>
+               {%endfor%}
+             </select>
+         </div>
+       </div>
+      <div class="col-4">
+        <div class="category-filter-order">
+        <form style="align: right;">
+          {% csrf_token %}
+          <select style="border: none;
+                        background: #fff;
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 13px;
+                        line-height: 15px;
+                        text-transform: uppercase;" name="order" onchange="this.form.submit(order)">
+            <option selected="Цена" disabled>Цена</option>
+            <option value="price">от дешевого к дорогому</option>
+            <option value="-price">от дорого к дешевому</option>
+          </select>
+        </form>
+        </div>
+      </div>
+
+      <div class="col-4 align-self-right">
+        <div class="category-filter-popular">
+        <form>
+          {% csrf_token %}
+          <select style="border: none;
+                        background: #fff;
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 13px;
+                        line-height: 15px;
+                        text-transform: uppercase;
+                        " name="order" onchange="this.form.submit(order)">
+            <option selected="Сортировка по популярности" disabled>Сортировка по популярности</option>
+            <option style="" value="count_views">по возрастанию</option>
+            <option value="-count_views">по убыванию</option>
+          </select>
+        </form>
+        </div>
+      </div>
+
+     </div>
+   </div>
+    </div>
+
+    <div class="album py-5">
+         <div class="container">
+          {% for product_group in products %}
+               <div class="row">
+                {% for product in product_group %}
+                  {% if product_group|length == 3 %}
+                   <div class="col-md-4">
+                       <div class="card shadow-sm" style="border: none;">
+                           <img class="img-product-catalog-1" style="" src="{{ product.image_1.url }}">
+                           <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px; padding-bottom: 50px;">
+                               <div class="row">
+                                   <div class="col-9 title" style="padding-right: 0px!important;">
+                                    <a href="{{ product.get_absolute_url }}"
+                                       style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                                    </div>
+                                   <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                                       <div class="card-text-p">{{ product.price }} руб.</div>
+                                   </div>
+                                </div>
+                              </div>
+                       </div>
+                   </div>
+                  {% endif %}
+
+                  {% if product_group|length == 2 %}
+                   <div class="col-md-6">
+                            <div class="card shadow-sm" style="border: none;">
+                              <img class="img-product-catalog-2" src="{{ product.image_1.url }}">
+                              <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+                                <div class="row">
+                                  <div class="col-9 title" style="padding-right: 0px!important;">
+                                    <a href="{{ product.get_absolute_url }}"
+                                       style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                                  </div>
+                                  <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                                    <div class="card-text-p">{{ product.price }} руб.</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                  {% endif %}
+                {% endfor %}
+               </div>
+          {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="album py-5">
+         <div class="container">
+          {% for product_group in products_1 %}
+               <div class="row">
+                {% for product in product_group %}
+                  {% if product_group|length == 3 %}
+                   <div class="col-md-4">
+                       <div class="card shadow-sm" style="border: none;">
+                           <img class="img-product-catalog-1" style="" src="{{ product.image_1.url }}">
+                           <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px; padding-bottom: 50px;">
+                               <div class="row">
+                                   <div class="col-9 title" style="padding-right: 0px!important;">
+                                    <a href="{{ product.get_absolute_url }}"
+                                       style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                                    </div>
+                                   <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                                       <div class="card-text-p">{{ product.price }} руб.</div>
+                                   </div>
+                                </div>
+                              </div>
+                       </div>
+                   </div>
+                  {% endif %}
+                  {% if product_group|length == 2 %}
+                   <div class="col-md-6">
+                            <div class="card shadow-sm" style="border: none;">
+                              <img class="img-product-catalog-2" src="{{ product.image_1.url }}">
+                              <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+                                <div class="row">
+                                  <div class="col-9 title" style="padding-right: 0px!important;">
+                                    <a href="{{ product.get_absolute_url }}"
+                                       style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                                  </div>
+                                  <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                                    <div class="card-text-p">{{ product.price }} руб.</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                  {% endif %}
+                {% endfor %}
+               </div>
+          {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+
+<div class="block-sm">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="t-4-1">
+            Новая коллекция
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid-m">
+      <div class="row">
+      </div>
+    </div>
+    <div class="container-fluid-m1">
+      <div class="row">
+      </div>
+    </div>
+
+    <div class="sort">
+        <div class="container">
+    <div class="row">
+      <div class="col-4 align-self-left">
+         <div class="category-filter-name">
+             {% csrf_token %}
+             <select style="border: none;
+                        background: #fff;
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 13px;
+                        line-height: 15px;
+                        text-transform: uppercase;" onchange="window.location.href=this.options[this.selectedIndex].value">
+               <option   selected="Наименование" disabled>НАИМЕНОВАНИЕ</option>
+               {% for category in category_list %}
+                 <option style=""
+                         value="{% url 'core:category_detail' category.slug %}">{{ category.title }}</option>
+               {%endfor%}
+             </select>
+         </div>
+       </div>
+      <div class="col-2">
+        <div class="category-filter-order">
+        <form style="align: right;">
+          {% csrf_token %}
+          <select style="border: none;
+                        background: #fff;
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 13px;
+                        line-height: 15px;
+                        text-transform: uppercase;" name="order" onchange="this.form.submit(order)">
+            <option selected="Цена" disabled>Цена</option>
+            <option value="price">от дешевого к дорогому</option>
+            <option value="-price">от дорого к дешевому</option>
+          </select>
+        </form>
+        </div>
+      </div>
+
+      <div class="col-4 align-self-right">
+        <div class="category-filter-popular">
+        <form>
+          {% csrf_token %}
+          <select style="border: none;
+                        background: #fff;
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 13px;
+                        line-height: 15px;
+                        text-transform: uppercase;
+                        " name="order" onchange="this.form.submit(order)">
+            <option selected="Сортировка по популярности" disabled>Сортировка по популярности</option>
+            <option style="" value="count_views">по возрастанию</option>
+            <option value="-count_views">по убыванию</option>
+          </select>
+        </form>
+        </div>
+      </div>
+
+     </div>
+   </div>
+    </div>
+
+    <div class="album py-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-4">
+          {% for product in category_products_qs %}
+          <div class="col" style="padding: 20px;">
+            <div class="card shadow-sm" style="border: none;">
+              <img class="img" style="height: 320px; width: 100%;" src="{{ product.image_1.url }}">
+              <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+                <div class="row">
+                  <div class="col-9 title" style="padding-right: 0px!important;">
+                    <a href="{{ product.get_absolute_url }}"
+                       style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                  </div>
+                  <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                    <div class="card-text-p">{{ product.price }} руб.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+     </div>
+
+</div>
+
+<div class="block-xs">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="t-4-1">
+            Новая коллекция
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid-m">
+      <div class="row">
+      </div>
+    </div>
+    <div class="container-fluid-m">
+      <div class="row">
+      </div>
+    </div>
+
+    <div class="sort">
+        <div class="container">
+    <div class="row">
+      <div class="col-4 align-self-left">
+         <div class="category-filter-name">
+             {% csrf_token %}
+             <select style="border: none;
+                        background: #fff;
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 13px;
+                        line-height: 15px;
+                        text-transform: uppercase;" onchange="window.location.href=this.options[this.selectedIndex].value">
+               <option   selected="Наименование" disabled>НАИМЕНОВАНИЕ</option>
+               {% for category in category_list %}
+                 <option style=""
+                         value="{% url 'core:category_detail' category.slug %}">{{ category.title }}</option>
+               {%endfor%}
+             </select>
+         </div>
+       </div>
+      <div class="col-2">
+        <div class="category-filter-order" style="">
+        <form style="align: right;">
+          {% csrf_token %}
+          <select style="
+                        width: 60px;
+                        margin-left: 100px;
+                        border: none;
+                        background: #fff;
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 13px;
+                        line-height: 15px;
+                        text-transform: uppercase;" name="order" onchange="this.form.submit(order)">
+            <option selected="Цена" disabled>Цена</option>
+            <option value="price">от дешевого к дорогому</option>
+            <option value="-price">от дорого к дешевому</option>
+          </select>
+        </form>
+        </div>
+      </div>
+
+<!--      <div class="col-4 align-self-right">-->
+<!--        <div class="category-filter-popular" style="display: none;">-->
+<!--        <form>-->
+<!--          {% csrf_token %}-->
+<!--          <select style="border: none;-->
+<!--                        background: #fff;-->
+<!--                        font-family: 'Raleway';-->
+<!--                        font-style: normal;-->
+<!--                        font-weight: 500;-->
+<!--                        font-size: 13px;-->
+<!--                        line-height: 15px;-->
+<!--                        text-transform: uppercase;-->
+<!--                        " name="order" onchange="this.form.submit(order)">-->
+<!--            <option selected="Сортировка по популярности" disabled>Сортировка по популярности</option>-->
+<!--            <option style="" value="count_views">по возрастанию</option>-->
+<!--            <option value="-count_views">по убыванию</option>-->
+<!--          </select>-->
+<!--        </form>-->
+<!--        </div>-->
+<!--      </div>-->
+
+     </div>
+   </div>
+    </div>
+
+    <div class="album py-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-4">
+          {% for product in category_products_qs %}
+          <div class="col" style="padding: 20px;">
+            <div class="card shadow-sm" style="border: none;">
+              <img class="img" style="height: 320px; width: 100%;" src="{{ product.image_1.url }}">
+              <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+                <div class="row">
+                  <div class="col-9 title" style="padding-right: 0px!important;">
+                    <a href="{{ product.get_absolute_url }}"
+                       style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                  </div>
+                  <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                    <div class="card-text-p">{{ product.price }} руб.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+     </div>
+
+</div>
+{% endblock main %}
+

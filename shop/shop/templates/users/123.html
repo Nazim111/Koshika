@@ -1,0 +1,326 @@
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</form>
+              {% if user.is_authenticated %}
+                <button class="">Аккаунт {{ user }}</button>
+                <a class="" aria-current="page" href="{% url 'users:logout' %}">Выйти</a>
+              {% else %}
+                <a class="" aria-current="page" href="{% url 'users:login' %}">Войти</a>
+                <button class="">Регистрация</button>
+              {% endif %}
+                <a class="nav-link active-3" aria-current="page" href="{% url 'users:register' %}">Зарегистрироваться</a>
+
+
+
+
+<div class="row-slider">
+      <div class="col">
+        <div class="slider" data-slider="chiefslider">
+          <div class="slider__container">
+            <div class="slider__wrapper">
+              <div class="slider__items">
+
+                <div class="slider__item">
+                  <div class="slider__item-container">
+                    <div class="slider__item-content">
+                      {% for product in category_lb_2 %}
+                      <img class="img-fluid-c" src="{{ product.image_small.url }}">
+                        <a href="{{ product.get_absolute_url }}"
+                           style="text-decoration: none;
+                                margin-top: 10px;
+                                padding-left: 0px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: left;
+                                color: #E11204;">{{ product.title }}</a>
+                        <div style="margin-top: 10px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: left;
+                                padding-right: 10px;
+                                color: #E11204;">{{ product.price }} руб.</div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slider__item">
+                    <div class="slider__item-container">
+                    <div class="slider__item-content">
+                      {% for product in category_lb_2 %}
+                      <img class="img-fluid-c" src="{{ product.image_small.url }}">
+                        <a href="{{ product.get_absolute_url }}"
+                           style="text-decoration: none;
+                                margin-top: 10px;
+                                padding-left: 0px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: left;
+                                color: #E11204;">{{ product.title }}</a>
+                        <div style="margin-top: 10px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: left;
+                                padding-right: 10px;
+                                color: #E11204;">{{ product.price }} руб.</div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slider__item">
+                    <div class="slider__item-container">
+                    <div class="slider__item-content">
+                      {% for product in category_lb_2 %}
+                      <img class="img-fluid-c" src="{{ product.image_small.url }}">
+                        <a href="{{ product.get_absolute_url }}"
+                           style="text-decoration: none;
+                                margin-top: 10px;
+                                padding-left: 0px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: left;
+                                color: #E11204;">{{ product.title }}</a>
+                        <div style="margin-top: 10px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: left;
+                                padding-right: 10px;
+                                color: #E11204;">{{ product.price }} руб.</div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <a href="#" class="slider__control" data-slide="prev"></a>
+          <a href="#" class="slider__control" data-slide="next"></a>
+          <ol class="slider__indicators">
+            <li data-slide-to="1"></li>
+            <li data-slide-to="2"></li>
+            <li data-slide-to="3"></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+  <div class="block-lg">
+    <div class="block-1">
+        <div class="container-fluid">
+          <div class="row">
+
+            <div class="col-4">
+              <div class="block__hidden">
+                <img class="img-b1" src="{% static 'img/b1.png' %}">
+              </div>
+            </div>
+            <div class="col-4">
+                  <div class="t-5-2">
+                      <a href="{% url 'core:category_detail' b1.slug %}" style="color: #2E2F40; text-decoration: none">{{b1}}</a>
+                  </div>
+            </div>
+            <div class="col-4">
+              <div class="block__hidden">
+                <img class="img-b2" src="{% static 'img/b2.png' %}">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="block-2">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4">
+                  <div class="block__hidden">
+                    <img class="img-s1" src="{% static 'img/s1.png' %}">
+                  </div>
+            </div>
+            <div class="col-4">
+                  <div class="t-5-2">
+                        <a href="{% url 'core:category_detail' s1.slug %}" style="color: #2E2F40; text-decoration: none">{{s1}}</a>
+                  </div>
+            </div>
+            <div class="col-4">
+                  <div class="block__hidden">
+                    <img class="img-s2" src="{% static 'img/s2.png' %}">
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="block-3">
+        <div class="container-fluid" style="margin-bottom: 100px;">
+          <div class="row">
+            <div class="col-4">
+                  <div class="block__hidden">
+                    <img class="img-k1" src="{% static 'img/k1.png' %}">
+                  </div>
+            </div>
+            <div class="col-4">
+                  <div class="t-5-2">
+                    <a href="{% url 'core:category_detail' k1.slug %}" style="color: #2E2F40; text-decoration: none">{{k1}}</a>
+                  </div>
+            </div>
+            <div class="col-4">
+                  <div class="block__hidden">
+                    <img class="img-k2" src="{% static 'img/k2.png' %}">
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="block-sm">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+            <div class="t-5-1">
+                Категории
+            </div>
+        </div>
+      </div>
+    </div>
+      <div class="block-1">
+        <div class="container-fluid">
+          <div class="row">
+
+            <div class="col-12">
+              <div class="t-5-2">
+                <span>
+                Браслеты
+                </span>
+              </div>
+            </div>
+                  <div class="block__hidden">
+                    <img class="img-b1" src="{% static 'img/b1.png' %}">
+                    <img class="img-b2" src="{% static 'img/b2.png' %}">
+                  </div>
+          </div>
+        </div>
+      </div>
+      <div class="block-2">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+                  <div class="t-5-2">
+                      <span>
+                        Cерьги
+                      </span>
+                  </div>
+            </div>
+                  <div class="block__hidden">
+                    <img class="img-s1" src="{% static 'img/s1.png' %}">
+                    <img class="img-s2" src="{% static 'img/s2.png' %}">
+                  </div>
+          </div>
+        </div>
+      </div>
+      <div class="block-3">
+        <div class="container-fluid" style="margin-bottom: 50px;">
+          <div class="row">
+            <div class="col-12">
+              <div class="t-5-2">
+                <span>
+                  Колье
+                </span>
+              </div>
+            </div>
+            <div class="block__hidden">
+              <img class="img-k1" src="{% static 'img/k1.png' %}">
+              <img class="img-k2" src="{% static 'img/k2.png' %}">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="block-xs">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+            <div class="t-5-1">
+                Категории
+            </div>
+        </div>
+      </div>
+    </div>
+      <div class="block-1">
+        <div class="container-fluid">
+          <div class="row">
+
+            <div class="col-12" style="height: 50px;">
+              <div class="t-5-2">
+                <span>
+                <a href="{% url 'core:category_detail' b1.slug %}" style="color: #2E2F40; text-decoration: none">{{b1}}</a>
+                </span>
+              </div>
+            </div>
+                  <div class="block__hidden">
+                    <img class="img-b1" src="{% static 'img/b1.png' %}">
+                    <img class="img-b2" src="{% static 'img/b2.png' %}">
+                  </div>
+          </div>
+        </div>
+      </div>
+      <div class="block-2">
+        <div class="container-fluid">
+          <div class="row">
+
+            <div class="col-12" style="height: 50px;">
+                  <div class="t-5-2">
+                      <span>
+                        <a href="{% url 'core:category_detail' s1.slug %}" style="color: #2E2F40; text-decoration: none">{{s1}}</a>
+                      </span>
+                  </div>
+            </div>
+                  <div class="block__hidden">
+                    <img class="img-s1" src="{% static 'img/s1.png' %}">
+                    <img class="img-s2" src="{% static 'img/s2.png' %}">
+                  </div>
+          </div>
+        </div>
+      </div>
+      <div class="block-3">
+        <div class="container-fluid" style="margin-bottom: 50px;">
+          <div class="row">
+            <div class="col-12" style="height: 50px;">
+              <div class="t-5-2">
+                <span>
+                  <a href="{% url 'core:category_detail' k1.slug %}" style="color: #2E2F40; text-decoration: none">{{k1}}</a>
+                </span>
+              </div>
+            </div>
+            <div class="block__hidden">
+              <img class="img-k1" src="{% static 'img/k1.png' %}">
+              <img class="img-k2" src="{% static 'img/k2.png' %}">
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+  </div>

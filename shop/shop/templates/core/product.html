@@ -1,0 +1,484 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+<link href="{% static 'css/slider-product-r.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/slider-product.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/index-2.css' %}" rel="stylesheet" type="text/css">
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script defer src="{% static 'js/chief-slider-product.js' %}"></script>
+<style>
+    *,
+    *::before,
+    *::after {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .itc-slider__item:nth-child {
+      background-color: #F5F5F5;
+      padding: 10px;
+    }
+
+  </style>
+
+
+<div class="container-fluid-m"></div>
+
+
+
+
+<div class="block-lg">
+  <div class="text-nav-menu" style="margin-bottom: 20px;">
+    <div class="t" style="font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">
+        <a class="" aria-current="page"
+           href="{% url 'core:catalog' %}" style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">Каталог</a> /
+        <a class="" aria-current="page"
+           href="{% url 'core:catalog' %}" style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">Категории</a> / {{ product.title }}
+    </div>
+</div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+      <div class="itc-slider" data-slider="itc-slider" data-loop="false" data-autoplay="false">
+      <div class="itc-slider__wrapper">
+        <div class="itc-slider__items">
+
+          {% for img in images %}
+          <div class="itc-slider__item">
+            <img class="img-product-pro" style="" src="{{ img.url }}">
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+      <button class="itc-slider__btn itc-slider__btn_prev"></button>
+      <button class="itc-slider__btn itc-slider__btn_next"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-desc">
+    <div class="container">
+        <div class="col">
+          <div class="card shadow-sm" style="border-radius: 10px;">
+            <div class="card-body" style="margin: 10px;">
+
+              <p class="card-text-title">{{ product.title }}</p>
+              <p class="card-text-price">{{ product.price }} руб.</p>
+              <p class="card-text-desc">{{ product.description }}</p>
+<!--              <p class="card-text">{{ product.count_views }}</p>-->
+<!--              <p class="card-text">{{ product.id }}</p>-->
+
+
+              <form class="cart-add" action="{% url 'order:cart_add' product.pk %}" method="POST">
+                {% csrf_token %}
+                {% if product.pk in request.session.cart %}
+                  <button type="button" class="btn btn-warning" disabled>В корзине</button>
+                {% else %}
+                  <button type="submit" class="btn btn"><div class="t-btn">В корзину</div></button>
+                {% endif %}
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="block-sm">
+  <div class="text-nav-menu" style="margin-bottom: 20px;">
+    <div class="t" style="font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">
+        <a class="" aria-current="page"
+           href="{% url 'core:catalog' %}" style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">Каталог</a> /
+        <a class="" aria-current="page"
+           href="{% url 'core:catalog' %}" style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">Категории</a> / {{ product.title }}
+    </div>
+</div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+      <div class="itc-slider" data-slider="itc-slider" data-loop="false" data-autoplay="false">
+      <div class="itc-slider__wrapper">
+        <div class="itc-slider__items">
+
+          {% for img in images %}
+          <div class="itc-slider__item">
+            <img class="img-product-pro" style="" src="{{ img.url }}">
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+      <button class="itc-slider__btn itc-slider__btn_prev"></button>
+      <button class="itc-slider__btn itc-slider__btn_next"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-desc-sm">
+    <div class="container-xl">
+        <div class="col">
+          <div class="card shadow" style="border: none; box-shadow: none!important;">
+            <div class="card-body" style="margin: 10px;">
+
+              <p class="card-text-title">{{ product.title }}</p>
+              <p class="card-text-price">{{ product.price }} руб.</p>
+              <p class="card-text-desc">{{ product.description }}</p>
+<!--              <p class="card-text">{{ product.count_views }}</p>-->
+<!--              <p class="card-text">{{ product.id }}</p>-->
+
+
+              <form class="cart-add" action="{% url 'order:cart_add' product.pk %}" method="POST">
+                {% csrf_token %}
+                {% if product.pk in request.session.cart %}
+                  <button type="button" class="btn btn-warning" disabled>В корзине</button>
+                {% else %}
+                  <button type="submit" class="btn btn"><div class="t-btn">В корзину</div></button>
+                {% endif %}
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="block-xs">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+      <div class="itc-slider" data-slider="itc-slider" data-loop="false" data-autoplay="false">
+      <div class="itc-slider__wrapper">
+        <div class="itc-slider__items">
+
+          {% for img in images %}
+          <div class="itc-slider__item">
+            <img class="img-product-pro" style="" src="{{ img.url }}">
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+      <button class="itc-slider__btn itc-slider__btn_prev"></button>
+      <button class="itc-slider__btn itc-slider__btn_next"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-desc-sm">
+    <div class="container-xl">
+        <div class="col">
+          <div class="card shadow" style="border: none; box-shadow: none!important;">
+            <div class="card-body" style="margin: 0px; padding: 0px;">
+
+              <p class="card-text-title">{{ product.title }}</p>
+              <p class="card-text-price">{{ product.price }} руб.</p>
+              <p class="card-text-desc">{{ product.description }}</p>
+<!--              <p class="card-text">{{ product.count_views }}</p>-->
+<!--              <p class="card-text">{{ product.id }}</p>-->
+
+
+              <form class="cart-add" action="{% url 'order:cart_add' product.pk %}" method="POST">
+                {% csrf_token %}
+                {% if product.pk in request.session.cart %}
+                  <button type="button" class="btn btn-warning" disabled>В корзине</button>
+                {% else %}
+                  <button type="submit" class="btn btn"><div class="t-btn">В корзину</div></button>
+                {% endif %}
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div class="container-fluid-m">
+    <div class="row">
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="t-4-1">
+            Рекомендуем также:
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid-m">
+    <div class="row">
+    </div>
+  </div>
+
+
+  <div class="block-lg">
+    <div class="container-sm">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        {% for product in product_r %}
+        <div class="col">
+          <div class="card shadow-sm" style="border: none; align-items: center;">
+            <img class="img-product-pro-r" src="{{ product.image_1.url }}" style="width: 267px; height: 323px; ">
+            <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+              <div class="row">
+                <div class="col-9 title" style="padding-right: 0px!important;">
+                  <a href="{{ product.get_absolute_url }}"
+                     style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                </div>
+                <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                  <div class="card-text-p">{{ product.price }} руб.</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="block-sm">
+    <div class="container-sm">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-4">
+        {% for product in product_r_1 %}
+        <div class="col">
+          <div class="card shadow-sm" style="border: none; align-items: center;">
+            <img class="img-product" src="{{ product.image_1.url }}" style="width: 240px; height: 340px; ">
+            <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+              <div class="row">
+                <div class="col-9 title" style="padding-right: 0px!important;">
+                  <a href="{{ product.get_absolute_url }}"
+                     style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                </div>
+                <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                  <div class="card-text-p">{{ product.price }} руб.</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="block-xs">
+      <div class="container-sm">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-4">
+        {% for product in product_r_2 %}
+        <div class="col">
+          <div class="card shadow-sm" style="border: none; align-items: center;">
+            <img class="img-product" src="{{ product.image_1.url }}" style="width: 240px; height: 340px; ">
+            <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+              <div class="row">
+                <div class="col-9 title" style="padding-right: 0px!important;">
+                  <a href="{{ product.get_absolute_url }}"
+                     style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                </div>
+                <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
+                  <div class="card-text-p">{{ product.price }} руб.</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+<!--  <div class="container-fluid">-->
+<!--    <div class="row-slider">-->
+<!--      <div class="col">-->
+<!--        <div class="slider" data-slider="chiefslider" style="">-->
+<!--          <div class="slider__container">-->
+<!--            <div class="slider__wrapper">-->
+<!--              <div class="slider__items">-->
+<!--                {% for product in product_r_2 %}-->
+<!--                <div class="slider__item">-->
+<!--                  <div class="slider__item-container">-->
+<!--                    <div class="slider__item-content">-->
+<!--                      <img class="img-fluid-c" src="{{ product.image_1.url }}">-->
+<!--                        <a href="{{ product.get_absolute_url }}"-->
+<!--                           style="text-decoration: none;-->
+<!--                                margin-top: 10px;-->
+<!--                                padding-left: 0px;-->
+<!--                                font-family: 'Raleway';-->
+<!--                                font-style: normal;-->
+<!--                                font-weight: 500;-->
+<!--                                font-size: 16px;-->
+<!--                                line-height: 19px;-->
+<!--                                text-align: left;-->
+<!--                                color: #E11204;">{{ product.title }}</a>-->
+<!--                        <div style="margin-top: 10px;-->
+<!--                                font-family: 'Raleway';-->
+<!--                                font-style: normal;-->
+<!--                                font-weight: 700;-->
+<!--                                font-size: 16px;-->
+<!--                                line-height: 19px;-->
+<!--                                text-align: left;-->
+<!--                                padding-right: 10px;-->
+<!--                                color: #E11204;">{{ product.price }} руб.</div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                {% endfor %}-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <a href="#" class="slider__control" data-slide="prev"></a>-->
+<!--          <a href="#" class="slider__control" data-slide="next"></a>-->
+<!--          <ol class="slider__indicators">-->
+<!--            <li data-slide-to="1"></li>-->
+<!--            <li data-slide-to="2"></li>-->
+<!--            <li data-slide-to="3"></li>-->
+<!--          </ol>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+<!--  </div>-->
+
+</div>
+
+
+
+
+<div class="container-fluid-m">
+    <div class="row">
+    </div>
+</div>
+
+{% endblock main %}
+
+
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/carousel.css' %}" rel="stylesheet" type="text/css">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+  </head>
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Example headline.</h1>
+            <p>Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Another example headline.</h1>
+            <p>Some representative placeholder content for the second slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>One more for good measure.</h1>
+            <p>Some representative placeholder content for the third slide of this carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+

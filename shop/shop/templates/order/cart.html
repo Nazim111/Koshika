@@ -1,0 +1,374 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<div class="container-fluid-m">
+        <div class="row">
+        </div>
+    </div>
+
+<div class="container-fluid-m1">
+    <div class="row">
+    </div>
+</div>
+<div class="container-fluid-m2">
+    <div class="row">
+    </div>
+</div>
+
+<div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 align-self-center text-center">
+                <div class="prof-t-1">
+                    Корзина
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="block-lg">
+    {% for item in cart %}
+    {% with product=item.product %}
+    <div class="container-xxl cart">
+        <div class="row main align-items-center" style="margin: 10px;">
+            <div class="col-2"><img class="img-cart" src="{{ product.image_1.url }}"></div>
+            <div class="col-4 align-self-center text-right">
+                <div class="title-product">{{ product.title }}</div>
+            </div>
+            <div class="col-2">
+                <div class="quantity-t">Количество:</div>
+            </div>
+            <div class="col-1">
+                <div class="row" style="border: 1px solid #C4C4C4; height: 30px;">
+                   <div class="col-4">
+                        <form class="remove_item" action="{% url 'order:remove_item' product.pk %}" method="POST">
+                        {% csrf_token %}
+                        <button style="border: none; background-color: #FFFFFF;" type="submit" class="button"><span>-</span></button>
+                    </form>
+                    </div>
+                    <div class="col-4">
+                        <div>{{ item.quantity }}</div>
+                    </div>
+                    <div class="col-4">
+                        <form class="cart-add" action="{% url 'order:cart_add' product.pk %}" method="POST">
+                        {% csrf_token %}
+                        <button style="border: none; background-color: #FFFFFF;" type="submit" class="button"><span class="close">+</span></button>
+                    </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="row">
+                    <div class="col">
+                        <div class="price-t">{{ item.total_price }} Руб.</div>
+                    </div>
+                    <div class="col">
+                        <form action="{% url 'order:cart_remove' product.pk %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" style="border: none; background-color: #FFFFFF; color: #8D414F; margin-top: 4px;"><span class="close">&#10005;</span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endwith %}
+    {% empty %}
+    <div class="container-fluid-m1">
+        <div class="row">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 align-self-center text-center">
+                <div class="prof-t-1">
+                    Корзина пуста!
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="container-fluid-m1">
+        <div class="row">
+        </div>
+    </div>
+    {% if cart %}
+    <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="price-all">Сумма</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="price-t total">{{ cart.get_total_price }} Руб.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="price-all">Доставка</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="price-t total">{{ cart.get_total_price }} Руб.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid-m">
+            <div class="row">
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-7 align-self-end">
+                    <div class="back-to-shop"><a href="{% url 'core:catalog' %}" style="margin-left: 40px; text-decoration: none;"><span class="text-muted">&leftarrow;Вернуться к покупкам</span></a></div>
+                </div>
+                <div class="col-5">
+                    <a href="{% url 'order:checkout' %}"><button style="margin-top: 20px;" class="w-90 btn btn-lg btn-primary" type="submit"><div class="btn-t">оформить заказ</div></button></a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+<div class="block-sm">
+    {% for item in cart %}
+    {% with product=item.product %}
+    <div class="container-xl">
+        <div class="row main align-items-center" style="margin: 10px;">
+            <div class="col-2"><img class="img-cart" src="{{ product.image_1.url }}">
+            </div>
+            <div class="col-10">
+                <div class="row align-items-right">
+                    <div class="col-12">
+                        <div class="title-product">{{ product.title }}</div>
+                    </div>
+                </div>
+                <div class="row cart">
+                    <div class="col-4">
+                        <div class="quantity-t">Количество:</div>
+                    </div>
+                    <div class="col-3" style="padding-left: 0px;">
+                        <div class="row" style="border: 1px solid #C4C4C4; height: 30px;">
+                           <div class="col-4">
+                                <form class="remove_item" action="{% url 'order:remove_item' product.pk %}" method="POST">
+                                {% csrf_token %}
+                                <button style="border: none; background-color: #FFFFFF;" type="submit" class="button"><span>-</span></button>
+                            </form>
+                            </div>
+                            <div class="col-4">
+                                <div>{{ item.quantity }}</div>
+                            </div>
+                            <div class="col-4">
+                                <form class="cart-add" action="{% url 'order:cart_add' product.pk %}" method="POST">
+                                {% csrf_token %}
+                                <button style="border: none; background-color: #FFFFFF;" type="submit" class="button"><span class="close">+</span></button>
+                            </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="row">
+                            <div class="col" style="padding-left: 0px; padding-right: 0px;">
+                                <div class="price-t">{{ item.total_price }} Руб.</div>
+                            </div>
+                            <div class="col" style="padding-left: 0px;">
+                                <form action="{% url 'order:cart_remove' product.pk %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" style="border: none; background-color: #FFFFFF; color: #8D414F; margin-top: 4px; margin-left: 20px;"><span class="close">&#10005;</span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+    {% endwith %}
+    {% empty %}
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 align-self-center text-center">
+                <div class="prof-t-1">
+                    Корзина пуста!
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="container-fluid-m1">
+        <div class="row">
+        </div>
+    </div>
+    {% if cart %}
+    <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="price-all">Сумма</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="price-t">{{ cart.get_total_price }} Руб.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="price-all">Доставка</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="price-t">{{ cart.get_total_price }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid-m1">
+            <div class="row">
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <a href="{% url 'order:checkout' %}"><button style="margin-top: 20px;" class="w-90 btn btn-lg btn-primary" type="submit"><div class="btn-t">оформить заказ</div></button></a>
+                </div>
+            </div>
+            <div class="row justify-content-start">
+                <div class="col-6">
+                    <div class="back-to-shop"><a href="{% url 'core:catalog' %}" style="margin-left: 40px; text-decoration: none;"><span class="text-muted">&leftarrow;Вернуться к покупкам</span></a></div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+<div class="container-fluid-m2">
+    <div class="row">
+    </div>
+</div>
+
+<div class="block-xs">
+    {% for item in cart %}
+    {% with product=item.product %}
+    <div class="container">
+        <div class="row">
+            <div class="col-4"><img class="img" src="{{ product.image_1.url }}" style="width: 82px; height: 124px;"></div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="title-product">{{ product.title }}</div>
+                </div>
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="quantity-t">Количество:</div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <div class="row" style="border: 1px solid #C4C4C4; height: 30px; width: 90px;">
+                            <div class="col-2">
+                            <form class="remove-item" action="{% url 'order:remove_item' product.pk %}" method="POST">
+                            {% csrf_token %}
+                                <button style="border: none; background-color: #FFFFFF;" type="submit" class="button-remove-item"><span>-</span></button>
+                            </form>
+                        </div>
+                            <div class="col-1">
+                                <div>{{ item.quantity }}</div>
+                            </div>
+                            <div class="col-2">
+                                <form class="cart-add" action="{% url 'order:cart_add' product.pk %}" method="POST">
+                                {% csrf_token %}
+                                    <button style="border: none; background-color: #FFFFFF;" type="submit" class="button"><span class="close">+</span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 px-0">
+                        <div class="price-t">{{ item.total_price }} Руб.</div>
+                    </div>
+
+                    <div class="col-3">
+                        <form action="{% url 'order:cart_remove' product.pk %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" style="border: none; background-color: #FFFFFF; color: #8D414F; margin-top: 0px;"><span class="close">&#10005;</span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endwith %}
+    {% empty %}
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 align-self-center text-center">
+                <div class="prof-t-1">
+                    Корзина пуста!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+    <div class="container-fluid-m">
+        <div class="row">
+        </div>
+    </div>
+    <div class="container-fluid-m1">
+        <div class="row">
+        </div>
+    </div>
+    {% if cart %}
+
+    <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="price-all">Сумма</div>
+                </div>
+                <div class="col-6">
+                    <div class="price-t">{{ cart.get_total_price }} Руб.</div>
+                </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-6">
+                    <div class="price-all">Доставка</div>
+                </div>
+                <div class="col-6">
+                    <div class="price-t">{{ cart.get_total_price }}</div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+<div class="container-fluid-m">
+    <div class="row">
+    </div>
+</div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <a href="{% url 'order:checkout' %}"><button style="margin-top: 20px;" class="w-90 btn btn-lg btn-primary" type="submit"><div class="btn-t">оформить заказ</div></button></a>
+            </div>
+        </div>
+        <div class="container-fluid-m">
+        <div class="row">
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="back-to-shop"><a href="{% url 'core:catalog' %}" style="margin-left: 10px; text-decoration: none;"><span class="text-muted">&leftarrow;Вернуться к покупкам</span></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+    {% endif %}
+<div class="container-fluid-m">
+        <div class="row">
+        </div>
+    </div>
+{% endblock main %}
+

@@ -1,0 +1,8 @@
+:root {
+  --select-border: #777;
+  --select-focus: #802C3B!important;
+}
+
+.option:hover {
+  color: #802C3B;
+}
