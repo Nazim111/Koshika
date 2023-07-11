@@ -1,8 +1,6 @@
 from django import forms
 
 from apps.order.models import Order
-from robokassa.forms import RobokassaForm
-
 
 
 class OrderForm(forms.ModelForm):

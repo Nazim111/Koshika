@@ -1,0 +1,9 @@
+# Byte-compiled / optimized Python files
+*.pyc
+__pycache__/
+
+# IDE-specific files
+.idea/
+
+# Installed libs
+venv/
