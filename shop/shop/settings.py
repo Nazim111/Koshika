@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-syo3^*p-bg4g9w!+z^(7ikm1myo0uzmp)*1_evf+e+)b3y&7%6
 DEBUG = True  # TODO: set to False in production !!!
 
 ALLOWED_HOSTS = ['*']  # TODO: set up hosts in production !!!
-CSRF_TRUSTED_ORIGINS = ['*']  # TODO: set up origins in production !!!
+CSRF_TRUSTED_ORIGINS = ['http://206.81.25.166/']  # TODO: set up origins in production !!!
 
 # Application definition
 INSTALLED_APPS = [
