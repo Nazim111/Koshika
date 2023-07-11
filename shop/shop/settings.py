@@ -23,9 +23,9 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = 'django-insecure-syo3^*p-bg4g9w!+z^(7ikm1myo0uzmp)*1_evf+e+)b3y&7%6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True  # TODO: set to False in production !!!
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']  # TODO: set up hosts in production !!!
 
 # Application definition
 INSTALLED_APPS = [
