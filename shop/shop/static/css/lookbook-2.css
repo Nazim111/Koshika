@@ -38,23 +38,65 @@
        margin-left: 20px;
    }
 
-   .t-8-1 {
-    padding-left: 290px;
-  }
-  .t-8-4 {
-    padding-left: 290px;
-  }
-
-  .t-8-6 {
-    padding-left: 290px;
-    margin-bottom: 60px;
-  }
 
 
   .t-6.b1 {
-        padding-left: 0px!important;
+        padding-left: 40px!important;
+    }
+      .t-7.b3 {
+         text-align: right;
+         margin-right: -20px;
+      }
+   .t-8-3 {
+        padding-left: 120px;
+   }
+   .t-8-7 {
+        padding-left: 110px;
+   }
+   .album.py-5 {
+       margin-left: 20px;
+       margin-right: 0px;
+   }
+   .card.shadow-sm-lg {
+        height: 520px;
+        width: 390px;
+        margin-left: 20px;
+   }
+
+   .img-product-1 {
+        height: 500px;
+        width: 387px;
+        margin: 0px;
+   }
+
+    .t-8-1 {
+        padding-left: 340px;
+        padding-bottom: 30px;
+    }
+    .t-8-4 {
+        padding-left: 340px;
+    }
+    .t-8-6 {
+        padding-left: 340px;
+    }
+    .t-8-3 {
+        padding-left: 100px;
+   }
+    .t-8-7 {
+        padding-left: 80px;
+   }
+
+   .card.shadow-sm {
+        height: 327px;
+        width: 325px;
+        margin-right: 10px;
     }
 
+   .img-product {
+        height: 330px;
+        width: 325px;
+        margin-right: 10px;
+   }
 
 
 }
@@ -111,7 +153,7 @@
 
    .t-5 {
         padding-left: 500px!important;
-        padding-right: 10px!important;
+        padding-right: 40px!important;
         margin-bottom: 40px;
     }
 
@@ -122,7 +164,7 @@
         width: 1200px;
    }
    .img-product {
-        height: 327px;
+        height: 330px;
         width: 325px;
         margin-right: 10px;
    }
@@ -148,9 +190,35 @@
     .t-8-6 {
         padding-left: 190px;
     }
+    .t-8-3 {
+        padding-left: 100px;
+   }
+    .t-8-7 {
+        padding-left: 100px;
+   }
+
+
+    .card.shadow-sm-lg {
+        height: 520px;
+        width: 390px;
+        margin-left: 20px;
+    }
+
+    .img-product-1 {
+        height: 500px;
+        width: 387px;
+        margin: 0px;
+    }
+    .t-6.b1 {
+        padding-left: 50px!important;
+    }
+    .t-7.b3 {
+        text-align: right;
+        margin-right: -10px;
+    }
     .album.py-5 {
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
   }
@@ -925,7 +993,6 @@
   }
 
 
-
 @media (max-width: 390px) {
     .body {
       width: 320px!important;
@@ -1264,7 +1331,6 @@
 
     }
   }
-
 @media (max-width: 375px) {
     .body {
       width: 320px!important;
@@ -1609,7 +1675,6 @@
 
     }
   }
-
 @media (max-width: 320px) {
     .body {
       width: 320px!important;
