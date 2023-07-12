@@ -82,8 +82,8 @@
   <div class="block-sm">
     <div class="container-fluid" style="background-color: #000000;">
       <div class="row">
-        <div class="col-12 px-0" style="background-color: #3C171C" id="1">
-          <div class="t-1">
+        <div class="col-12 px-0" style="background-color: #3C171C" >
+          <div class="t-1" id="a2">
             KOSHIKA
           </div>
           <div class="t-1-1">
@@ -146,7 +146,7 @@
   <div class="block-xs">
     <div class="container-fluid" style="background-color: #000000;">
       <div class="row" style="background-color: #3C171C; height: 355px;">
-        <div class="col-12 px-0"  >
+        <div class="col-12 px-0">
           <div class="t-1">
             KOSHIKA
           </div>
@@ -169,7 +169,7 @@
     <div class="container-fluid" style="padding-bottom: 20px; background-color: #000000;">
       <div class="row">
         <div class="col-12">
-          <div class="t-2">
+          <div class="t-2" id="a3">
               Koshika - это <br>Идеальная деталь<br>вашего
           </div>
           <div class="t-2-1">
@@ -241,9 +241,9 @@
       <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 g-4">
         {% for product in category_s %}
         <div class="col">
-          <div class="card shadow-sm" style="border: none;">
+          <div class="card shadow-sm" style="border: none; box-shadow: none!important;">
             <img class="img-product" style="border: none; " src="{{ product.image_1.url }}">
-            <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+            <div class="card-body" style="border: none; padding-right: 0px; padding-left: 10px">
               <div class="row">
                 <div class="col-9 title" style="padding-right: 0px!important;">
                   <a href="{{ product.get_absolute_url }}"
@@ -291,8 +291,8 @@
       <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 g-4">
         {% for product in category_xs %}
         <div class="col">
-          <div class="card shadow-sm" style="border: none;">
-            <img class="img-product" style="border: none; height: 350px;" src="{{ product.image_1.url }}">
+          <div class="card shadow-sm" style="border: none; box-shadow: none!important;">
+            <img class="img-product" style="border: none;" src="{{ product.image_1.url }}">
             <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
               <div class="row">
                 <div class="col-9 title" style="padding-right: 0px!important;">
@@ -446,8 +446,77 @@
         </div>
       </div>
   </div>
+
+
+
+<!-- with blocks -->
+<!--  <div class="block-xs">-->
+<!--    <div class="container-fluid">-->
+<!--      <div class="row">-->
+<!--        <div class="col-12">-->
+<!--            <div class="t-5-1">-->
+<!--                Категории-->
+<!--            </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--      <div class="block-1">-->
+<!--        <div class="container-fluid" >-->
+<!--          <div class="row">-->
+<!--            <div class="col-12" style="height: 50px;">-->
+<!--              <div class="t-5-2">-->
+<!--                <span>-->
+<!--                <a href="{% url 'core:category_detail' b1.slug %}" style="color: #2E2F40; text-decoration: none">{{b1}}</a>-->
+<!--                </span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--                  <div class="block__hidden">-->
+<!--                    <img class="img-b1" src="{% static 'img/b1.png' %}">-->
+<!--                    <img class="img-b2" src="{% static 'img/b2.png' %}">-->
+<!--                  </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="block-2">-->
+<!--        <div class="container-fluid">-->
+<!--          <div class="row">-->
+<!--            <div class="col-12" style="height: 50px;">-->
+<!--                  <div class="t-5-2">-->
+<!--                      <span>-->
+<!--                        <a href="{% url 'core:category_detail' s1.slug %}" style="color: #2E2F40; text-decoration: none">{{s1}}</a>-->
+<!--                      </span>-->
+<!--                  </div>-->
+<!--            </div>-->
+<!--                  <div class="block__hidden" style="">-->
+<!--                    <img class="img-s1" src="{% static 'img/s1.png' %}">-->
+<!--                    <img class="img-s2" src="{% static 'img/s2.png' %}">-->
+<!--                  </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="block-3">-->
+<!--        <div class="container-fluid" style="margin-bottom: 100px;">-->
+<!--          <div class="row">-->
+<!--            <div class="col-12" style="height: 50px;">-->
+<!--              <div class="t-5-2">-->
+<!--                <span>-->
+<!--                  <a href="{% url 'core:category_detail' k1.slug %}" style="color: #2E2F40; text-decoration: none">{{k1}}</a>-->
+<!--                </span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="block__hidden">-->
+<!--              <img class="img-k1" src="{% static 'img/k1.png' %}">-->
+<!--              <img class="img-k2" src="{% static 'img/k2.png' %}">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--  </div>-->
+
+
+<!-- withOUT blocks -->
   <div class="block-xs">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <div class="col-12">
             <div class="t-5-1">
@@ -456,59 +525,38 @@
         </div>
       </div>
     </div>
-      <div class="block-1">
-        <div class="container-fluid" >
-          <div class="row">
-            <div class="col-12" style="height: 50px;">
-              <div class="t-5-2">
+
+
+              <div class="t-5-2" style="height: 60px;">
                 <span>
                 <a href="{% url 'core:category_detail' b1.slug %}" style="color: #2E2F40; text-decoration: none">{{b1}}</a>
                 </span>
               </div>
-            </div>
-                  <div class="block__hidden">
-                    <img class="img-b1" src="{% static 'img/b1.png' %}">
-                    <img class="img-b2" src="{% static 'img/b2.png' %}">
-                  </div>
-          </div>
-        </div>
-      </div>
-      <div class="block-2">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12" style="height: 50px;">
-                  <div class="t-5-2">
+
+
+
+                  <div class="t-5-2" style="height: 60px;">
                       <span>
                         <a href="{% url 'core:category_detail' s1.slug %}" style="color: #2E2F40; text-decoration: none">{{s1}}</a>
                       </span>
                   </div>
-            </div>
-                  <div class="block__hidden" style="">
-                    <img class="img-s1" src="{% static 'img/s1.png' %}">
-                    <img class="img-s2" src="{% static 'img/s2.png' %}">
-                  </div>
-          </div>
-        </div>
-      </div>
-      <div class="block-3">
-        <div class="container-fluid" style="margin-bottom: 100px;">
-          <div class="row">
-            <div class="col-12" style="height: 50px;">
-              <div class="t-5-2">
+
+
+
+
+              <div class="t-5-2" style="height: 60px;">
                 <span>
                   <a href="{% url 'core:category_detail' k1.slug %}" style="color: #2E2F40; text-decoration: none">{{k1}}</a>
                 </span>
               </div>
-            </div>
-            <div class="block__hidden">
-              <img class="img-k1" src="{% static 'img/k1.png' %}">
-              <img class="img-k2" src="{% static 'img/k2.png' %}">
-            </div>
-          </div>
-        </div>
-      </div>
+
   </div>
 
+
+  <div class="container-fluid-m1">
+      <div class="row">
+      </div>
+  </div>
 
   <div class="container">
     <div class="row">
