@@ -3528,8 +3528,9 @@
 }
 .card.shadow-sm {
     height: 100%;
-    width: 284px;
-    margin-left: 20px;
+    width: 300px;
+    margin-left: 28px;
+    margin-right: 10px;
 }
 .card.shadow-sm-c {
     height: 350px;
