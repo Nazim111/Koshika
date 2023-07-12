@@ -257,20 +257,20 @@
         <div class="col-4 xs-sm">
         </div>
 
-        <div class="col-8 xs-xs">
+        <div class="col-7 xs-xs">
             <div class="row">
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-4">
             {% for product in category_lb_1 %}
               <div class="col">
-                <div class="card shadow-sm" style="border: none;">
-                  <img class="img-product" style="height: 440px;" src="{{ product.image_1.url }}">
-                  <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px; background-color: #BBC2CD">
+                <div class="card shadow-sm" style="border: solid #BBC2CD; box-shadow: none!important;">
+                  <img class="img-product" style="" src="{{ product.image_1.url }}">
+                  <div class="card-body" style="border: solid #BBC2CD; margin-top: 0px; padding-bottom: 0px; padding-top: 0px; padding-right: 0px; padding-left: 0px; background-color: #BBC2CD">
                     <div class="row">
                       <div class="col-8 title" style="padding-right: 0px!important;">
                         <a href="{{ product.get_absolute_url }}"
                            style="text-decoration: none;
-                                    margin-top: 10px;
-                                    padding-left: 10px;
+                                    margin-top: 0px;
+                                    margin-left: 0px;
                                     font-family: 'Raleway';
                                     font-style: normal;
                                     font-weight: 500;
@@ -280,7 +280,7 @@
                                     color: #E11204;">{{ product.title }}</a>
                       </div>
                       <div class="col-4 price" style="margin-right: 0px!important; padding-left: 0px!important;">
-                        <div style="margin-top: 0px;
+                        <div style="margin-top: -10px;
                                     font-family: 'Raleway';
                                     font-style: normal;
                                     font-weight: 700;
@@ -311,48 +311,49 @@
 
 
 
-<div class="block-xs">
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3" style="">
-            {% for product in category_lb_1 %}
-              <div class="col">
-                <div class="card shadow-sm" style="border: none;">
-                  <img class="img-product" style="height: 350px;" src="{{ product.image_1.url }}">
-                  <div class="card-body" style="border: none; padding: 0px; background-color: #BBC2CD">
-                    <div class="row">
-                      <div class="col-8 title" style="padding-right: 0px!important; padding-left: 20px; margin-top: 10px;">
-                        <a href="{{ product.get_absolute_url }}"
-                           style="text-decoration: none;
-                                    margin-top: 20px;
-                                    padding-left: 0px;
-                                    font-family: 'Raleway';
-                                    font-style: normal;
-                                    font-weight: 500;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    text-align: left;
-                                    color: #E11204;">{{ product.title }}</a>
-                      </div>
+<!--<div class="block-xs">-->
+<!--    <div class="container">-->
+<!--      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3" style="">-->
+<!--            {% for product in category_lb_1 %}-->
+<!--              <div class="col">-->
+<!--                <div class="card shadow-sm" style="border: none; box-shadow: none!important;">-->
+<!--                  <img class="img-product" style="height: 350px;" src="{{ product.image_1.url }}">-->
+<!--                  <div class="card-body" style="border: none; padding: 0px; background-color: #BBC2CD">-->
+<!--                    <div class="row">-->
+<!--                      <div class="col-8 title" style="padding-right: 0px!important; padding-left: 20px; margin-top: 10px;">-->
+<!--                        <a href="{{ product.get_absolute_url }}"-->
+<!--                           style="text-decoration: none;-->
+<!--                                    margin-top: 20px;-->
+<!--                                    padding-left: 0px;-->
+<!--                                    font-family: 'Raleway';-->
+<!--                                    font-style: normal;-->
+<!--                                    font-weight: 500;-->
+<!--                                    font-size: 16px;-->
+<!--                                    line-height: 19px;-->
+<!--                                    text-align: left;-->
+<!--                                    color: #E11204;">{{ product.title }}</a>-->
+<!--                      </div>-->
 
-                      <div class="col-4 price" style="margin-right: 0px!important;padding-left: 0px!important;">
-                        <div style="margin-top: 10px;
-                                    font-family: 'Raleway';
-                                    font-style: normal;
-                                    font-weight: 700;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    text-align: right;
-                                    padding-right: 10px;
-                                    color: #E11204;">{{ product.price }} руб.</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            {% endfor %}
-            </div>
-    </div>
-  </div>
+<!--                      <div class="col-4 price" style="margin-right: 0px!important;padding-left: 0px!important;">-->
+<!--                        <div style="margin-top: 10px;-->
+<!--                                    font-family: 'Raleway';-->
+<!--                                    font-style: normal;-->
+<!--                                    font-weight: 700;-->
+<!--                                    font-size: 16px;-->
+<!--                                    line-height: 19px;-->
+<!--                                    text-align: right;-->
+<!--                                    padding-right: 10px;-->
+<!--                                    color: #E11204;">{{ product.price }} руб.</div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            {% endfor %}-->
+<!--            </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
 <div class="block-lg">
   <div class="container">
     <div class="t-2 b5 b7 b1">
@@ -360,18 +361,18 @@
     </div>
       <div class="album py-5" style="">
       <div class="container">
-        <div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 g-0">
           {% for product in category_lb %}
           <div class="col">
-            <div class="card shadow-sm" style="border: none;">
-              <img class="img-product" style="height: 440px;" src="{{ product.image_1.url }}">
-              <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px;background-color: #BBC2CD">
+            <div class="card shadow-sm" style="border: none; box-shadow: none;">
+              <img class="img-product-1" style="" src="{{ product.image_1.url }}">
+              <div class="card-body-1" style="border: none; padding-right: 0px; padding-left: 0px;background-color: #BBC2CD">
                 <div class="row">
                   <div class="col-8 title" style="padding-right: 0px!important;">
                     <a href="{{ product.get_absolute_url }}"
                        style="text-decoration: none;
-                                margin-top: 10px;
-                                padding-left: 10px;
+                                margin-top: 20px;
+                                margin-left: 0px;
                                 font-family: 'Raleway';
                                 font-style: normal;
                                 font-weight: 500;
@@ -381,7 +382,7 @@
                                 color: #E11204;">{{ product.title }}</a>
                   </div>
                   <div class="col-4 price" style="margin-right: 0px!important;padding-left: 0px!important;">
-                    <div style="margin-top: 0px;
+                    <div style="margin-top: -10px;
                                 font-family: 'Raleway';
                                 font-style: normal;
                                 font-weight: 700;
@@ -401,6 +402,10 @@
      </div>
   </div>
 </div>
+
+<div class="box"></div>
+<div class="box"></div>
+
 
 <div class="block-sm">
             <div class="row" style="margin: 10px; margin-bottom: 50px;">
@@ -490,7 +495,7 @@
           {% endfor %}
         </div>
       </div>
-     </div>
+</div>
 
 <div class="block-xs">
   <div class="container-fluid">
