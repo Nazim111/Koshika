@@ -15,7 +15,7 @@
         display: none;
     }
     .navbar-brand {
-      padding-left: 300px;
+      padding-left: 290px;
     }
     .nav-link.active-1 {
         padding-left: 400px !important;
@@ -39,41 +39,25 @@
    }
 
    .t-8-1 {
-    padding-left: 300px;
-    padding-bottom: 30px;
-    font-family: 'Cormorant Garamond';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 30px;
-    text-transform: uppercase;
-
-    color: #2E2F40;
+    padding-left: 290px;
   }
   .t-8-4 {
-    padding-left: 300px;
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 35px;
-    color: #2E2F40;
+    padding-left: 290px;
   }
 
   .t-8-6 {
-    padding-left: 300px;
+    padding-left: 290px;
     margin-bottom: 60px;
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #2E2F40;
   }
 
 
+  .t-6.b1 {
+        padding-left: 0px!important;
+    }
 
-  }
+
+
+}
 
 @media (max-width: 1600px) {
     .block-sm {
@@ -91,6 +75,9 @@
     .col-12.xs {
         display: none;
     }
+    .navbar-brand {
+        padding-left: 200px;
+    }
       .nav-link.active-1 {
     padding-left: 350px !important;
     }
@@ -101,7 +88,7 @@
       padding-left: 40px !important;
     }
     .nav-link.active-4 {
-      padding-left: 140px !important;
+      padding-left: 180px !important;
     }
     .nav-link.active-5 {
       padding-left: 10px !important;
@@ -121,6 +108,51 @@
        margin-right: -720px;
        margin-left: 20px;
    }
+
+   .t-5 {
+        padding-left: 500px!important;
+        padding-right: 10px!important;
+        margin-bottom: 40px;
+    }
+
+   .t-5.b2 {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 40px;
+        width: 1200px;
+   }
+   .img-product {
+        height: 327px;
+        width: 325px;
+        margin-right: 10px;
+   }
+   .card.shadow-sm {
+        height: 327px;
+        width: 325px;
+        margin-right: 10px;
+   }
+   .col-7.xs-xs {
+        margin-left: 40px;
+   }
+   .img-product-1 {
+        height: 500px;
+        width: 387px;
+   }
+   .t-8-1 {
+        padding-left: 190px;
+        padding-bottom: 30px;
+    }
+    .t-8-4 {
+        padding-left: 190px;
+    }
+    .t-8-6 {
+        padding-left: 190px;
+    }
+    .album.py-5 {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
   }
 
 @media (max-width: 1366px) {
@@ -138,6 +170,36 @@
     }
     .col-12.xs {
         display: none;
+    }
+    .album.py-5 {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .img-product-1 {
+        height: 440px;
+        width: 347px;
+    }
+    .img-product {
+        height: 307px;
+        width: 305px;
+        margin-right: 10px;
+    }
+    .card.shadow-sm {
+        height: 307px;
+        width: 305px;
+        margin-right: 10px;
+    }
+    .col-4.price {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+    .card-body {
+        margin-top: 5px;
+        width: 305px;
+    }
+    .card-body-1 {
+        margin-top: 5px;
+        width: 347px;
     }
     .navbar-nav.me-auto.mb-2.mb-md-0 {
         padding-right: 40px;
@@ -363,17 +425,17 @@
     .t-2.b5.b6.b7 {
         font-size: 65px;
         text-align: left;
-        padding-left: 400px!important;
+        padding-left: 424px!important;
         width: 1000px;
     }
     .t-5.b2 {
-        padding-left: 200px;
+        padding-left: 430px!important;
         padding-right: 40px;
         margin-bottom: 40px;
         width: 1250px;
     }
     .t-7.b2 {
-        padding-right: 250px;
+        padding-right: 210px;
     }
     .img-6 {
         margin-top: 20px;
@@ -1123,7 +1185,7 @@
     }
     .t-2.b5.b7.b1 {
       width: 200px;
-      margin-top: 60px;
+      margin-top: 100px;
       padding-left: 0px;
       font-size: 33px;
     }
@@ -1154,35 +1216,12 @@
         margin-left: 0px;
         padding-right: 220px;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .col-7.xs-xs {
+        margin-left: 28px;
+    }
+    .card.shadow-sm {
+        margin-bottom: 40px;
+    }
 
     .t-8-1 {
       padding-left: 36px;
@@ -1320,7 +1359,7 @@
     .t-2.yr {
       margin-top: -10px;
       padding-bottom: 20px;
-      padding-left: 80px!important;
+      padding-left: 96px!important;
       font-size: 30px!important;
     }
     .col-4.b-1 {
@@ -1418,7 +1457,7 @@
       width: 300px;
     }
     .t-5.b2 {
-      padding-left: 48px!important;
+      padding-left: 66px!important;
       padding-right: 0px;
       margin-bottom: 40px;
       width: 300px;
@@ -1502,34 +1541,28 @@
     }
     .t-7.b2 {
         display: block;
-        margin-left: 0px;
-        padding-right: 210px;
+        margin-left: 28px;
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 150px;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .card.shadow-sm {
+        height: 360px;
+        width: 320px;
+        margin-left: 0px;
+        margin-bottom: 10px;
+    }
+    .card-body {
+        width: 320px;
+    }
+    .col-7.xs-xs {
+        margin-left: 14px;
+    }
+    .img-product {
+        height: 310px;
+        width: 320px;
+        margin-left: 0px;
+    }
 
 
 
