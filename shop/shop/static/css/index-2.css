@@ -14,7 +14,7 @@
         padding-left: 350px !important;
     }
     .nav-link.active-4 {
-        padding-left: 200px !important;
+        padding-left: 140px !important;
     }
 
     .t-1 {
@@ -40,7 +40,7 @@
     }
     .img-1 {
       margin-top: 0px;
-      margin-left: -40px;
+      margin-left: -38px;
       width: 320px;
       height: 296px;
     }
@@ -48,6 +48,7 @@
       margin-top: 0px;
       width: 440px;
       height: 540px;
+      margin-left: 2px;
     }
     .img-3 {
       margin-left: 290px;
@@ -216,6 +217,7 @@
             height: 347px;
             width: 315px;
             margin-left: 10px;
+            margin-right: 0px;
       }
         .img-9 {
           width: 306px;
@@ -1285,9 +1287,6 @@
 
 
 }
-
-
-
 @media (max-width: 1024px) {
   .html {
     width: 1024px!important;
@@ -2165,6 +2164,7 @@
   }
 
 }
+
 
 
 @media (max-width: 640px) {
@@ -3525,7 +3525,16 @@
 .card.shadow-sm {
     height: 100%;
     width: 284px;
-    margin-left: 34px;
+    margin-left: 20px;
+}
+.card.shadow-sm-c {
+    height: 350px;
+    width: 350px;
+    margin-left: 0px;
+}
+.img-c {
+    height: 100%;
+    width: 350px;
 }
 .block-2:hover .block__hidden {
     height: 200px;
@@ -4101,7 +4110,7 @@
 }
 
 .container.product {
-    height: 960px!important;
+    height: 800px!important;
 }
 .block-2:hover .block__hidden {
     height: 200px;
@@ -4397,6 +4406,12 @@
         background-color: #958F8F;
         position: relative;
         text-decoration:none;
+  }
+
+  .card.shadow-sm {
+    height: 100%;
+    width: 284px;
+    margin-left: 8px;
   }
 }
 
