@@ -280,14 +280,14 @@
                                     color: #E11204;">{{ product.title }}</a>
                       </div>
                       <div class="col-4 price" style="margin-right: 0px!important; padding-left: 0px!important;">
-                        <div style="margin-top: -10px;
+                        <div style="margin-top: 10px;
                                     font-family: 'Raleway';
                                     font-style: normal;
                                     font-weight: 700;
                                     font-size: 16px;
                                     line-height: 19px;
                                     text-align: right;
-                                    padding-right: 10px;
+                                    padding-right: 0px;
                                     color: #E11204;">{{ product.price }} руб.</div>
                       </div>
                     </div>
@@ -364,14 +364,13 @@
         <div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 g-0">
           {% for product in category_lb %}
           <div class="col">
-            <div class="card shadow-sm" style="border: none; box-shadow: none;">
+            <div class="card shadow-sm-lg" style="border: solid #BBC2CD; box-shadow: none;">
               <img class="img-product-1" style="" src="{{ product.image_1.url }}">
-              <div class="card-body-1" style="border: none; padding-right: 0px; padding-left: 0px;background-color: #BBC2CD">
+              <div class="card-body-1" style="border: none; padding-right: 0px; padding-left: 0px; background-color: #BBC2CD">
                 <div class="row">
-                  <div class="col-8 title" style="padding-right: 0px!important;">
+                  <div class="col-8 title" style="margin-top: 10px; padding-right: 0px!important;">
                     <a href="{{ product.get_absolute_url }}"
                        style="text-decoration: none;
-                                margin-top: 20px;
                                 margin-left: 0px;
                                 font-family: 'Raleway';
                                 font-style: normal;
@@ -382,14 +381,14 @@
                                 color: #E11204;">{{ product.title }}</a>
                   </div>
                   <div class="col-4 price" style="margin-right: 0px!important;padding-left: 0px!important;">
-                    <div style="margin-top: -10px;
+                    <div style="margin-top: 10px;
                                 font-family: 'Raleway';
                                 font-style: normal;
                                 font-weight: 700;
                                 font-size: 16px;
                                 line-height: 19px;
                                 text-align: right;
-                                padding-right: 10px;
+                                padding-right: 0px;
                                 color: #E11204;">{{ product.price }} руб.</div>
                   </div>
                 </div>
@@ -557,14 +556,12 @@
   </div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="t-7 b3">
-            перейти в каталог
-        </div>
+    <div class="row justify-content-end">
+        <a class="t-7 b3" style="" href="{% url 'core:catalog'%}">перейти в каталог</a>
     </div>
     <div class="row">
-        <div class="t-6 b1">
-            ⟵вернуться на главную
+        <div class="">
+            <a class="t-6 b1" style="text-decoration: none;" href="{{ product.get_absolute_url }}">⟵вернуться на главную</a>
         </div>
     </div>
 </div>
