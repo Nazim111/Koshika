@@ -458,15 +458,33 @@
       height: 616px;
     }
     .img-7 {
-      width: 307px;
+      width: 280px;
       height: 282px;
       margin-left: 60px;
     }
     .img-8 {
-      width: 307px;
+      width: 280px;
       height: 282px;
       margin-left: 60px;
       margin-right: 0px;
+    }
+    .img-9 {
+      width: 280px;
+      height: 282px;
+      left: 614px;
+    }
+    .img-10 {
+      width: 280px;
+      height: 282px;
+      /* margin-right: 100px; */
+      margin-left: -38px;
+
+    }
+    .img-11 {
+      width: 280px;
+      height: 282px;
+      /* margin-right: 100px; */
+      margin-left: -38px;
     }
     .t-6-1 {
       position: absolute;
@@ -1092,7 +1110,7 @@
   }
 
   .img-0 {
-    width: 754px;
+    width: 763px;
   }
   .img-5 {
     margin-left: 80px;
