@@ -1,4 +1,14 @@
 @media (max-width: 1920px) {
+    .t-3-2 {
+        padding-right: 240px;
+    }
+    .container.product {
+        height: 500px!important;
+        margin-left: 275px;
+        margin-right: 50px;
+        width: 1480px;
+    }
+
     .category-filter-popular {
         display: block;
         margin-left: 70px;
@@ -11,10 +21,13 @@
       padding-left: 300px;
     }
     .nav-link.active-1 {
-        padding-left: 350px !important;
+        padding-left: 340px !important;
     }
     .nav-link.active-4 {
         padding-left: 140px !important;
+    }
+    .nav-link.active-6 {
+        padding-left: 230px !important;
     }
 
     .t-1 {
@@ -32,16 +45,16 @@
     }
     .t-3 {
       padding-left: 300px;
-      padding-right: 180px;
+      padding-right: 320px;
     }
 
     .img-0 {
-      width: 1030px;
+      width: 1040px;
     }
     .img-1 {
       margin-top: 0px;
       margin-left: -38px;
-      width: 320px;
+      width: 300px;
       height: 296px;
     }
     .img-2 {
@@ -60,18 +73,18 @@
       height: 750px;
     }
     .img-5 {
-      margin-left: 296px;
+      margin-left: 300px;
       margin-top: 100px;
       padding-right: 0px;
       margin-bottom: 0px;
-      width: 620px;
+      width: 640px;
       height: 616px;
     }
     .img-6 {
       margin-top: 100px;
 
       margin-bottom: 0px;
-      margin-left: -52px;
+      margin-left: -34px;
       width: 696px;
       height: 616px;
     }
@@ -133,7 +146,7 @@
     .img-b2 {
       position: absolute;
       top: 3820px;
-      margin-left: 0px;
+      margin-left: 50px;
       width: 280px;
       height: 280px;
     }
@@ -147,7 +160,7 @@
     .img-s2 {
       position: absolute;
       top: 3760px;
-      margin-left: 0px;
+      margin-left: 50px;
       width: 280px;
       height: 235px;
     }
@@ -161,10 +174,14 @@
     .img-k2 {
       position: absolute;
       top: 3870px;
-      margin-left: 40px;
+      margin-left: 50px;
       width: 280px;
       height: 270px;
     }
+    .button-2 {
+        margin-left:44px;
+    }
+
     .img-product-catalog {
         height: 420px;
         width: 100%;
@@ -219,27 +236,79 @@
             margin-left: 10px;
             margin-right: 0px;
       }
-        .img-9 {
-          width: 306px;
-          height: 282px;
-          margin-left: 20px;
-        }
-        .img-10 {
-          width: 307px;
-          height: 282px;
-          margin-left: -10px;
+    .img-7 {
+      width: 280px;
+      height: 282px;
+      margin-left: 0px;
+    }
+    .img-8 {
+      width: 280px;
+      height: 282px;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .img-9 {
+      width: 280px;
+      height: 282px;
+      margin-left: 98px;
+    }
+    .img-10 {
+      width: 280px;
+      height: 282px;
+      /* margin-right: 100px; */
+      margin-left:38px;
 
-        }
-        .img-11 {
-          width: 307px;
-          height: 282px;
-          margin-left: -10px;
-        }
+    }
+    .img-11 {
+      width: 280px;
+      height: 282px;
+      /* margin-right: 100px; */
+      margin-left: 38px;
+    }
+    .t-8-3 {
+        padding-left: 110px;
+    }
+
 
 }
 
 @media (max-width: 1600px) {
 
+    .t-3-2 {
+    padding-left: 140px;
+    padding-right: 110px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #E5E5E5;
+    }
+
+    .container.product {
+        height: 500px!important;
+        margin-left: 160px;
+        width: 1240px;
+    }
+    .img-product {
+        height: 347px;
+        width: 280px;
+        margin-right: 10px;
+    }
+    .card.shadow-sm {
+        height: 347px;
+        width: 280px;
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+    .product-desc {
+        position: absolute;
+        width: 500px;
+        height: 489px;
+        top: 160px;
+        left: 1000px;
+        border-radius: 10px;
+    }
     .navbar-brand {
       padding-left: 200px;
       font-family: 'Cormorant Garamond';
@@ -251,10 +320,13 @@
       color: #E5E5E5;
     }
     .nav-link.active-1 {
-      padding-left: 300px !important;
+      padding-left: 280px !important;
     }
     .nav-link.active-4 {
         padding-left: 100px !important;
+    }
+    .nav-link.active-6 {
+        padding-left: 170px !important;
     }
 
     .category-filter-name {
@@ -469,7 +541,7 @@
       color: #262E21;
     }
     .t-8-3 {
-      padding-left: 50px;
+      padding-left: 100px;
       font-family: 'Cormorant Garamond';
       font-style: normal;
       font-weight: 500;
@@ -546,6 +618,14 @@
 }
 
 @media (max-width: 1440px) {
+  .product-desc {
+       position: absolute;
+       width: 500px;
+       height: 489px;
+       top: 160px;
+       left: 800px;
+       border-radius: 10px;
+  }
   .html {
     width: 1440px!important;
   }
@@ -847,10 +927,10 @@
     padding-right: 40px;
   }
   .navbar-brand {
-    padding-left: 80px;
+    padding-left: 90px;
   }
   .nav-link.active-1 {
-    padding-left: 250px !important;
+    padding-left: 280px !important;
   }
   .nav-link.active-2 {
      padding-left: 40px !important;
@@ -865,7 +945,7 @@
      padding-left: 10px !important;
   }
   .nav-link.active-6 {
-     padding-left: 215px !important;
+     padding-left: 160px !important;
   }
   .nav-link.active-7 {
      padding-left: 10px !important;
@@ -933,34 +1013,35 @@
   }
   .t-3 {
     padding-left: 70px;
-    padding-right: 100px;
+    padding-right: 280px;
 
   }
   .t-3-1 {
+    width: 260px;
   }
   .t-3-2 {
-    padding-left: 120px;
-    padding-right: 20px;
+    padding-left: 160px;
+    padding-right: 0px;
 
   }
 
   .img-2 {
     margin-top: 20px;
-    margin-left: -14px;
-    width: 342px;
+    margin-left: -20px;
+    width: 383px;
     height: 490px;
   }
   .img-1 {
     margin-top: 20px;
-    margin-left: -9px;
-    width: 270px;
+    margin-left: 20px;
+    width: 296px;
     height: 252px;
   }
   .img-3 {
-    margin-left: 79px;
+    margin-left: 70px;
     padding-right: 0px;
     margin-bottom: 50px;
-    width: 852px;
+    width: 904px;
     height: 696px;
   }
 
@@ -974,35 +1055,36 @@
     line-height: 55px;
   }
   .container.product {
-    max-width: 1240px!important;
+    width: 1228px;
+    margin-left: 50px;
   }
   .img-b1 {
     top: 3340px;
-    margin-left: 54px;
+    margin-left: 66px;
   }
   .img-b2 {
     top: 3380px;
-    margin-left: 76px;
+    margin-left: 80px;
 
   }
   .img-s1 {
     top: 3340px;
-    margin-left: 54px;
+    margin-left: 66px;
 
   }
   .img-s2 {
     top: 3340px;
-    margin-left: 76px;
+    margin-left: 80px;
 
   }
   .img-k1 {
     top: 3340px;
-    margin-left: 54px;
+    margin-left: 66px;
 
   }
   .img-k2 {
     top: 3440px;
-    margin-left: 76px;
+    margin-left: 80px;
   }
   .reg-link-t {
     margin-left: 60px;
@@ -1010,7 +1092,7 @@
   }
 
   .img-0 {
-    width: 754px;
+    width: 763px;
   }
   .img-5 {
     margin-left: 80px;
@@ -1024,7 +1106,7 @@
     margin-top: 100px;
 
     margin-bottom: 0px;
-    margin-left: -60px;
+    margin-left: -50px;
     width: 652px;
     height: 616px;
   }
@@ -1043,20 +1125,19 @@
     margin-top: 565px;
   }
   .img-7 {
-    margin-left: -26px;
+    margin-left: -30px;
   }
   .img-8 {
-    margin-left: -26px;
+    margin-left: -30px;
   }
   .img-9 {
-    margin-left: 0px;
+    margin-left: 30px;
   }
   .img-10 {
-    margin-left: -6px;
-
+    margin-left: 18px;
   }
   .img-11 {
-    margin-left: -6px;
+    margin-left: 18px;
   }
 
   .t-7-1 {
@@ -1064,7 +1145,7 @@
     margin-left: 0px;
   }
   .t-8-1 {
-    padding-left: 60px;
+    padding-left: 70px;
     padding-bottom: 30px;
 
   }
@@ -1074,11 +1155,11 @@
 
   }
   .t-8-3 {
-    padding-left: 60px;
+    padding-left: 140px;
 
   }
   .t-8-4 {
-    padding-left: 60px;
+    padding-left: 70px;
 
   }
 
@@ -1087,12 +1168,12 @@
 
   }
   .t-8-6 {
-    padding-left: 60px;
+    padding-left: 70px;
     margin-bottom: 60px;
 
   }
   .t-8-7 {
-    padding-left: 60px;
+    padding-left: 140px;
     margin-bottom: 60px;
 
   }
@@ -1119,7 +1200,7 @@
 
   .product-desc {
     position: absolute;
-    width: 400px;
+    width: 500px;
     height: 400px;
     top: 220px;
     left: 760px;
@@ -2940,6 +3021,8 @@
 
 .container.product {
     height: 800px!important;
+    width: auto;
+    margin-left: 0px;
 }
 .block-2:hover .block__hidden {
     height: 200px;
