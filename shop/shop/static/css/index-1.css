@@ -1,6 +1,5 @@
 
     .navbar-nav.me-auto.mb-2.mb-md-0 {
-      padding-right: 110px;
       font-family: 'Inter';
       font-style: normal;
       font-weight: 400;
@@ -35,7 +34,7 @@
       text-align: center;
     }
     .nav-link.active-1 {
-      padding-left: 350px !important;
+      padding-left: 300px !important;
     }
     .nav-link.active-2 {
       padding-left: 40px !important;
@@ -50,7 +49,7 @@
       padding-left: 10px !important;
     }
     .nav-link.active-6 {
-      padding-left: 210px !important;
+      padding-left: 150px !important;
     }
     .nav-link.active-7 {
       padding-left: 10px !important;
@@ -230,6 +229,7 @@
     }
     .container.product {
         height: 500px!important;
+        margin-left: 264px;
     }
     .img-product {
 
@@ -358,6 +358,16 @@
       line-height: 19px;
       color: #E5E5E5;
     }
+    .t-6-k {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 32px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #E5E5E5;
+    }
 
     .t-7-1 {
       /* position: absolute;
@@ -440,7 +450,7 @@
       color: #515151;
     }
     .t-8-7 {
-      padding-left: 50px;
+      padding-left: 100px;
       margin-bottom: 60px;
       font-family: 'Raleway';
       font-style: normal;
@@ -490,30 +500,30 @@
       height: 616px;
     }
     .img-7 {
-      width: 307px;
+      width: 280px;
       height: 282px;
       margin-left: 60px;
     }
     .img-8 {
-      width: 307px;
+      width: 280px;
       height: 282px;
       margin-left: 60px;
       margin-right: 0px;
     }
     .img-9 {
-      width: 306px;
+      width: 280px;
       height: 282px;
-      left: 814px;
+      left: 614px;
     }
     .img-10 {
-      width: 307px;
+      width: 280px;
       height: 282px;
       /* margin-right: 100px; */
       margin-left: -38px;
 
     }
     .img-11 {
-      width: 307px;
+      width: 280px;
       height: 282px;
       /* margin-right: 100px; */
       margin-left: -38px;
@@ -686,6 +696,16 @@
         color: #2E2F40;
         margin-bottom: 30px;
     }
+    .reg-link-t.reg {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;;
+        text-transform: uppercase;
+        color: #2E2F40;
+        margin-bottom: 40px;
+    }
 
     .call-t-1 {
         margin-bottom: 40px;
@@ -797,12 +817,13 @@
 
     .product-desc {
         position: absolute;
-        width: 436px;
+        width: 500px;
         height: 489px;
-        top: 180px;
-        left: 960px;
+        top: 160px;
+        left: 1200px;
         border-radius: 10px;
     }
+
     .card-body-p {
         margin: 40px;
     }
@@ -812,7 +833,7 @@
         width: 333px;
         height: 57px;
         margin-top: 40px;
-        margin-left: 0px;
+        margin-left: 30px;
     }
     .t-btn {
         font-family: 'Raleway';
@@ -870,6 +891,15 @@
         height: 720px;
         width: 100%;
     }
+
+
+    .st {
+        font-size: 25px;
+        margin-left: 170px;
+        margin-top: -23px;
+    }
+
+
 
 
 
