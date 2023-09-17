@@ -288,7 +288,7 @@
     }
     .img-product-catalog {
         height: 390px;
-        width: 390px;
+        width: 370px;
     }
 
     .card-text-p {
@@ -1039,8 +1039,8 @@
   }
 
   .album.py-5 {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 70px;
+    margin-right: 70px;
   }
 
   .col-2.px-0 {
@@ -1127,8 +1127,8 @@
     margin-right: 20px;
   }
   .card.shadow-sm {
-        height: 300px;
-        width: 280px;
+        height: 420px;
+        width: 360px;
         margin-left: 10px;
         margin-right: 0px;
   }
@@ -1263,8 +1263,8 @@
   }
 
     .img-product-catalog {
-        width: 387px;
-        height: 412px;
+        height: 350px!important;
+        width: 350px;
         margin: 10px;
     }
 
