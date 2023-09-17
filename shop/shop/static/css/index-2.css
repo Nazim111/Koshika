@@ -1,4 +1,7 @@
 @media (max-width: 1920px) {
+    .block-lg-n {
+        display: none;
+    }
     .t-3-2 {
         padding-right: 240px;
     }
@@ -273,7 +276,26 @@
 }
 
 @media (max-width: 1600px) {
+    .block-lg-n {
+        display: none;
+    }
+    .container-sm {
+        max-width: 1200px;
+    }
+    .container-sm-1 {
+        max-width: 1000px;
+        margin-left: 250px;
+    }
+    .img-product-catalog {
+        height: 390px;
+        width: 390px;
+    }
 
+    .card-text-p {
+    margin-left: 10px;
+    margin-right: 0px!important;
+    width: 80px;
+    }
     .t-3-2 {
     padding-left: 140px;
     padding-right: 110px;
@@ -296,10 +318,11 @@
         margin-right: 10px;
     }
     .card.shadow-sm {
-        height: 347px;
-        width: 280px;
+        height: 440px;
+        width: 390px;
         margin-left: 10px;
         margin-right: 0px;
+        margin-bottom: 20px;
     }
     .product-desc {
         position: absolute;
@@ -913,6 +936,32 @@
 }
 
 @media (max-width: 1366px) {
+    .container-sm {
+        max-width: 1280px;
+    }
+    .container-sm-1 {
+        max-width: 1000px;
+        margin-left: 200px;
+    }
+    .text-nav-menu {
+        margin-left: 88px;
+    }
+    .card-text-title {
+        text-align: left;
+    }
+    .card-text-desc {
+        font-weight: 500;
+        font-size: 14px;
+        width: 600px;
+    }
+
+    .block-lg-b {
+        display: none;
+    }
+    .block-lg-n {
+        display: block;
+    }
+
     .card-text-p {
         margin-left: -20px;
     }
@@ -963,7 +1012,7 @@
      padding-left: 10px !important;
   }
   .nav-link.active-6 {
-     padding-left: 160px !important;
+     padding-left: 170px !important;
   }
   .nav-link.active-7 {
      padding-left: 10px !important;
@@ -1051,7 +1100,7 @@
   }
   .img-1 {
     margin-top: 20px;
-    margin-left: 25px;
+    margin-left: 24px;
     width: 296px;
     height: 252px;
   }
@@ -1059,7 +1108,7 @@
     margin-left: 70px;
     padding-right: 0px;
     margin-bottom: 50px;
-    width: 898px;
+    width: 900px;
     height: 696px;
   }
 
@@ -1124,7 +1173,7 @@
   }
 
   .img-0 {
-    width: 754px;
+    width: 763px;
   }
   .img-5 {
     margin-left: 80px;
