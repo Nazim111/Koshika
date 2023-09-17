@@ -29,7 +29,7 @@
 
 
 
-<div class="block-lg">
+<div class="block-lg-b">
   <div class="text-nav-menu" style="margin-bottom: 20px;">
     <div class="t" style="font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">
         <a class="" aria-current="page"
@@ -90,6 +90,67 @@
   </div>
 </div>
 
+
+<div class="block-lg-n">
+  <div class="text-nav-menu" style="margin-bottom: 20px;">
+    <div class="t" style="font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">
+        <a class="" aria-current="page"
+           href="{% url 'core:catalog' %}" style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">Каталог</a> /
+        <a class="" aria-current="page"
+           href="{% url 'core:catalog' %}" style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">Категории</a> / {{ product.title }}
+    </div>
+</div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+      <div class="itc-slider" data-slider="itc-slider" data-loop="false" data-autoplay="false">
+      <div class="itc-slider__wrapper">
+        <div class="itc-slider__items">
+
+          {% for img in images %}
+          <div class="itc-slider__item">
+            <img class="img-product-pro" style="" src="{{ img.url }}">
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+      <button class="itc-slider__btn itc-slider__btn_prev"></button>
+      <button class="itc-slider__btn itc-slider__btn_next"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-desc-sm">
+    <div class="container-sm">
+        <div class="col">
+          <div class="card shadow" style="border: none; box-shadow: none!important;">
+            <div class="card-body" style="margin: 10px;">
+
+              <p class="card-text-title">{{ product.title }}</p>
+              <p class="card-text-price">{{ product.price }} руб.</p>
+              <p class="card-text-desc">{{ product.description }}</p>
+<!--              <p class="card-text">{{ product.count_views }}</p>-->
+<!--              <p class="card-text">{{ product.id }}</p>-->
+
+
+              <form class="cart-add" action="{% url 'order:cart_add' product.pk %}" method="POST">
+                {% csrf_token %}
+                {% if product.pk in request.session.cart %}
+                  <button type="button" class="btn btn-warning" disabled>В корзине</button>
+                {% else %}
+                  <button type="submit" class="btn btn"><div class="t-btn">В корзину</div></button>
+                {% endif %}
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
 
 <div class="block-sm">
   <div class="text-nav-menu" style="margin-bottom: 20px;">
@@ -229,17 +290,17 @@
 
 
   <div class="block-lg">
-    <div class="container-sm">
+    <div class="container-sm-1">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
         {% for product in product_r %}
         <div class="col">
           <div class="card shadow-sm" style="border: none; align-items: center;">
             <img class="img-product-pro-r" src="{{ product.image_1.url }}" style="width: 267px; height: 323px; ">
-            <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+            <div class="card-body" style="width: 260px; border: none; padding-right: 0px; padding-left: 0px">
               <div class="row">
                 <div class="col-9 title" style="padding-right: 0px!important;">
                   <a href="{{ product.get_absolute_url }}"
-                     style="text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
+                     style="margin-left: 0px; text-decoration: none;font-family: 'Raleway';font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;color: #515151;">{{ product.title }}</a>
                 </div>
                 <div class="col-3 price" style="margin-right: 0px!important;padding-left: 0px!important;">
                   <div class="card-text-p">{{ product.price }} руб.</div>
