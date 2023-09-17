@@ -107,13 +107,13 @@
    </div>
 
 <div class="album py-5">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
           {% for product in category_products_qs %}
           <div class="col">
             <div class="card shadow-sm" style="border: none;">
               <img class="img-product-catalog" style="" src="{{ product.image_1.url }}">
-              <div class="card-body" style="border: none; padding-right: 0px; padding-left: 0px">
+              <div class="card-body" style="width: 390px; border: none; padding-right: 0px; padding-left: 0px">
                 <div class="row">
                   <div class="col-9 title" style="padding-right: 0px!important;">
                     <a href="{{ product.get_absolute_url }}"
